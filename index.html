@@ -65,22 +65,12 @@
     <article id="post-使用Github-Hexo搭建自己的博客" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/01/08/使用Github-Hexo搭建自己的博客/" class="article-date">
-  <time datetime="2019-01-08T12:09:04.000Z" itemprop="datePublished">2019-01-08</time>
+  <time datetime="2019-01-08T12:09:04.420Z" itemprop="datePublished">2019-01-08</time>
 </a>
     
   </div>
   <div class="article-inner">
     
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/08/使用Github-Hexo搭建自己的博客/">使用Github+Hexo搭建自己的博客</a>
-    </h1>
-  
-
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -121,19 +111,35 @@
 <p>  <code>git config –-global user.name “张三”</code>  //(“”的账号是刚才Github里面自己注册的账号)<br>  <code>git config –-global user.email “1234567@qq.com”</code> //(“”的邮箱是你自己注册的邮箱)</p>
 </li>
 <li><p><strong>生成SSH密钥设置到Github</strong><br><code>cd ~/.ssh</code><br><code>ssh-keygen -t rsa -C “1234567@qq.com”</code>  //打自己的邮箱<br>如果  <code>cd ~/.ssh</code> 显示No such file，可以输入命令 <code>mkdir ~/.ssh</code> 创建一个文件夹，然后执行相应的操作即可，出现下图，则设置成功<img src="https://img-blog.csdnimg.cn/20190108185113300.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>设置ssh key到GitHub 默认生成ssh key在C:\Users\username.ssh文件夹中，用记事本打开 id_rsa.pub文件，复制 i文件内容到 github-&gt;settings-&gt;SSH and GPG key-&gt;new ssh-&gt;key </p>
-<ul>
-<li><strong>创建本地博客</strong></li>
+</li>
+<li><p><strong>创建本地博客</strong></p>
+</li>
 </ul>
-</li>
-<li><p>[ ] 在D盘下创建文件夹 test</p>
-</li>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 在D盘下创建文件夹 test</li>
+</ul>
+<ul>
 <li style="list-style: none"><input type="checkbox"> 鼠标右键 test，选择 Git Bash Here</li>
+</ul>
+<ul>
 <li style="list-style: none"><input type="checkbox"> Git Bash 打开之后，所在的位置就是 test 这个文件夹的位置。（/F/test）</li>
+</ul>
+<ul>
 <li style="list-style: none"><input type="checkbox"> 输入 <code>hexo init</code> 将 test文件夹初始化成一个博客文件夹。</li>
+</ul>
+<ul>
 <li style="list-style: none"><input type="checkbox"> 输入 <code>npm install</code> 安装依赖包。</li>
+</ul>
+<ul>
 <li style="list-style: none"><input type="checkbox"> 输入 <code>hexo g</code> 生成（generate）网页。 由于我们还没创建任何博客，生成的网页会展示 Hexo 里面自带了一个 Hello World 的博客。</li>
+</ul>
+<ul>
 <li style="list-style: none"><input type="checkbox"> 输入 <code>hexo s</code> 将生成的网页放在了本地服务器（server）。</li>
+</ul>
+<ul>
 <li style="list-style: none"><input type="checkbox"> 浏览器里输入 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 。 就可以看到刚才的成果了。</li>
+</ul>
+<ul>
 <li style="list-style: none"><input type="checkbox"> 回到 Git Bash，按 Ctrl+C 结束。<br>此时再看 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 就是无法访问了。</li>
 </ul>
 <p>问题：假如页面一直无法跳转，那么可能端口被占用了。此时我们ctrl+c停止服务器，接着输入“hexo server -p 端口号”来改变端口号</p>
@@ -142,33 +148,38 @@
 </ul>
 <p>如果你按照前面的教程走下来，没有退出刚刚的Git Bash界面，当前路径是刚刚初始化的test路径，输入 <code>hexo new &quot;My First Post&quot;</code></p>
 <ul>
-<li><p>[ ] 在<code>F:\test\source_posts</code>路径下，会有一个 My-First-Post.md 的文件。 编辑这个文件，然后保存。</p>
-</li>
-<li><p>[ ] 回到 Git Bash，输入 <code>hexo g</code> 生成博客</p>
-</li>
-<li><p>[ ] 输入 <code>hexo s</code> 开启服务</p>
-</li>
-<li><p>[ ] 前往 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看成果。</p>
-</li>
-<li><p>[ ] 回到 Git Bash，按 Ctrl+C 结束。如果不结束的话，接口会一直被占用。</p>
-</li>
-<li><p><strong>将本地Hexo博客部署在Github上</strong></p>
-</li>
+<li style="list-style: none"><input type="checkbox"> 在<code>F:\test\source_posts</code>路径下，会有一个 My-First-Post.md 的文件。 编辑这个文件，然后保存。</li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 回到 Git Bash，输入 <code>hexo g</code> 生成博客</li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 输入 <code>hexo s</code> 开启服务</li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 前往 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看成果。</li>
+</ul>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 回到 Git Bash，按 Ctrl+C 结束。如果不结束的话，接口会一直被占用。</li>
+</ul>
+<ul>
+<li><strong>将本地Hexo博客部署在Github上</strong></li>
 </ul>
 <p>前面两个部分，我们已经有了本地博客，和一个能托管这些资料的线上仓库。只要把本地博客部署（deploy）在我们的 Github 对应的 Repository 就可以了。</p>
 <h6 id="操作如下：-1"><a href="#操作如下：-1" class="headerlink" title="操作如下："></a>操作如下：</h6><ol>
 <li><p>获取 Github 对应的 Repository 的链接。</p>
 <ul>
-<li style="list-style: none"><input type="checkbox"> 登陆 Github，进入到 xxyxt.github.io</li>
-<li style="list-style: none"><input type="checkbox"> 点击 Clone or download</li>
+<li style="list-style: none"><input type="checkbox"> 登陆 Github，进入到 xxyxt.github.io    </li>
+<li style="list-style: none"><input type="checkbox"> 点击 Clone or download    </li>
 <li style="list-style: none"><input type="checkbox"> 复制 URL 待用，我的是 <a href="https://github.com/xxyxt/xxyxt.github.io.git" target="_blank" rel="noopener">https://github.com/xxyxt/xxyxt.github.io.git</a></li>
 </ul>
 </li>
+</ol>
+<ol start="2">
 <li><p>修改博客的配置文件</p>
-<pre><code>- [ ] 打开配置文件 /F/test/_config.yml （使用 bash 里的 vi 或者 notepad）
-</code></pre><ul>
-<li style="list-style: none"><input type="checkbox"> 找到 #Deployment，填入以下内容：<br>deploy:<br>type: git<br>repository: <a href="https://github.com/Ryanluoxu/ryanluoxu.github.io.git" target="_blank" rel="noopener">https://github.com/Ryanluoxu/ryanluoxu.github.io.git</a>  <pre><code>branch: master
-</code></pre></li>
+<ul>
+<li style="list-style: none"><input type="checkbox"> 打开配置文件 /F/test/_config.yml （使用 bash 里的 vi 或者 notepad）</li>
+<li style="list-style: none"><input type="checkbox"> 找到 #Deployment，填入以下内容：<br>deploy:<br>type: git<br>repository: <a href="https://github.com/xxyxt/xxyxt.github.io.git" target="_blank" rel="noopener">https://github.com/xxyxt/xxyxt.github.io.git</a><br>branch: master</li>
 </ul>
 </li>
 </ol>
@@ -189,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xxyxt.github.io/2019/01/08/使用Github-Hexo搭建自己的博客/" data-id="cjqnpqbw30003kwrx3wcuabx0" class="article-share-link">Share</a>
+      <a data-url="https://xxyxt.github.io/2019/01/08/使用Github-Hexo搭建自己的博客/" data-id="cjqnqesij00034orxhcs9xfco" class="article-share-link">Share</a>
       
       
     </footer>
@@ -280,7 +291,7 @@ int main()
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xxyxt.github.io/2019/01/08/My-First-Post/" data-id="cjqnpqbvm0000kwrxvnn723h9" class="article-share-link">Share</a>
+      <a data-url="https://xxyxt.github.io/2019/01/08/My-First-Post/" data-id="cjqnqesi100004orxakwpa9q0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -325,7 +336,7 @@ int main()
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xxyxt.github.io/2019/01/08/hello-world/" data-id="cjqnpqbw00002kwrx6apfbse4" class="article-share-link">Share</a>
+      <a data-url="https://xxyxt.github.io/2019/01/08/hello-world/" data-id="cjqnqesib00014orxzuqgi2s3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +377,7 @@ int main()
       <ul>
         
           <li>
-            <a href="/2019/01/08/使用Github-Hexo搭建自己的博客/">使用Github+Hexo搭建自己的博客</a>
+            <a href="/2019/01/08/使用Github-Hexo搭建自己的博客/">(no title)</a>
           </li>
         
           <li>
