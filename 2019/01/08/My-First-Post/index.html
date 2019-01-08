@@ -7,14 +7,19 @@
   
   <title>My First Post | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
+  <meta name="description" content="const和符号常量define的区别 符号常量通俗来讲就是“替换”，即用一个标识符来替换常量，因此又称作“宏定义”。其标准格式如下：  1#define 标识符 常量  例如把圆周率pi定义为3.14,注意末尾不加分号 1#define pi 3.14  于是在程序中使用pi的地方都会被替换成3.14，下面这段代码用来计算圆的面积 #include&amp;lt;cstdio&amp;gt; #define p">
+<meta property="og:type" content="article">
 <meta property="og:title" content="My First Post">
 <meta property="og:url" content="https://xxyxt.github.io/2019/01/08/My-First-Post/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="const和符号常量define的区别 符号常量通俗来讲就是“替换”，即用一个标识符来替换常量，因此又称作“宏定义”。其标准格式如下：  1#define 标识符 常量  例如把圆周率pi定义为3.14,注意末尾不加分号 1#define pi 3.14  于是在程序中使用pi的地方都会被替换成3.14，下面这段代码用来计算圆的面积 #include&amp;lt;cstdio&amp;gt; #define p">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-08T08:46:03.052Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2018121513305021.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-01-08T09:12:28.440Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="My First Post">
+<meta name="twitter:description" content="const和符号常量define的区别 符号常量通俗来讲就是“替换”，即用一个标识符来替换常量，因此又称作“宏定义”。其标准格式如下：  1#define 标识符 常量  例如把圆周率pi定义为3.14,注意末尾不加分号 1#define pi 3.14  于是在程序中使用pi的地方都会被替换成3.14，下面这段代码用来计算圆的面积 #include&amp;lt;cstdio&amp;gt; #define p">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/2018121513305021.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -83,11 +88,66 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="const和符号常量define的区别"><a href="#const和符号常量define的区别" class="headerlink" title="const和符号常量define的区别"></a>const和符号常量define的区别</h2><ul>
+<li>符号常量通俗来讲就是“<strong>替换</strong>”，即用一个标识符来替换常量，因此又称作“<strong>宏定义</strong>”。其标准格式如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define 标识符 常量</span><br></pre></td></tr></table></figure>
+<p> 例如把圆周率pi定义为3.14,注意<strong>末尾不加分号</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define pi 3.14</span><br></pre></td></tr></table></figure>
+<p> 于是在程序中使用<strong>pi的地方都会被替换成3.14</strong>，下面这段代码用来计算圆的面积</p>
+<pre><code>#include&lt;cstdio&gt;
+#define pi 3.14
+int main()
+{
+     double r = 3;
+     printf(&quot;%.2f\n&quot;,pi*r*r);
+     return 0;    
+}
+</code></pre><p> 输出结果：</p>
+<pre><code>28.26
+</code></pre><ul>
+<li>另一种定义方法是const,其标准格式如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const 数据类型 变量名 = 常量；</span><br></pre></td></tr></table></figure>
+<p> 仍然使用pi来举例：</p>
+<pre><code>const int pi = 3.14;
+</code></pre><p>下面用一个计算圆的面积的例子来演示const的使用方法：</p>
+<pre><code>#include&lt;cstdio&gt;
+const double pi = 3.14;
+int main()
+{
+     double r = 3;
+     printf(&quot;%.2f\n&quot;,pi*r*r);
+     return 0;    
+}
+</code></pre><p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">28.26</span><br></pre></td></tr></table></figure>
+<p>这两种方法都可以采用，<strong>一般推荐使用const</strong></p>
+<ul>
+<li>define除了可以定义常量之外，还可以用来<code>定义语句</code>，其格式如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define 标识符 语句常量</span><br></pre></td></tr></table></figure>
+<p>例如可以定义一个加法的简单运算：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define ADD(a,b)  ((a) + (b))</span><br></pre></td></tr></table></figure>
+<p>这样就可以直接使用ADD(a,b) 来计算 a+b:</p>
+<pre><code>#include&lt;cstdio&gt;
+#define ADD(a,b) ((a) + (b))
+int main()
+{
+    int num1 = 3;
+    int num2 = 4;
+    printf(&quot;%d&quot;,ADD(num1,num2));
+    return 0;
+}
+</code></pre><p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure>
+<p>欢迎与我交流~</p>
+<p><img src="https://img-blog.csdnimg.cn/2018121513305021.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xxyxt.github.io/2019/01/08/My-First-Post/" data-id="cjqnj9t8k0000tcrxxrd8fjbd" class="article-share-link">Share</a>
+      <a data-url="https://xxyxt.github.io/2019/01/08/My-First-Post/" data-id="cjqnjeq3g0000r4rxv8zzff9v" class="article-share-link">Share</a>
       
       
     </footer>
