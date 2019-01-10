@@ -41,47 +41,4 @@
     
   </entry>
   
-  <entry>
-    <title>My First Post</title>
-    <link href="https://xxyxt.github.io/2019/01/08/My-First-Post/"/>
-    <id>https://xxyxt.github.io/2019/01/08/My-First-Post/</id>
-    <published>2019-01-08T08:46:03.000Z</published>
-    <updated>2019-01-08T09:12:28.440Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="const和符号常量define的区别"><a href="#const和符号常量define的区别" class="headerlink" title="const和符号常量define的区别"></a>const和符号常量define的区别</h2><ul><li>符号常量通俗来讲就是“<strong>替换</strong>”，即用一个标识符来替换常量，因此又称作“<strong>宏定义</strong>”。其标准格式如下：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define 标识符 常量</span><br></pre></td></tr></table></figure><p> 例如把圆周率pi定义为3.14,注意<strong>末尾不加分号</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define pi 3.14</span><br></pre></td></tr></table></figure><p> 于是在程序中使用<strong>pi的地方都会被替换成3.14</strong>，下面这段代码用来计算圆的面积</p><pre><code>#include&lt;cstdio&gt;#define pi 3.14int main(){     double r = 3;     printf(&quot;%.2f\n&quot;,pi*r*r);     return 0;    }</code></pre><p> 输出结果：</p><pre><code>28.26</code></pre><ul><li>另一种定义方法是const,其标准格式如下：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const 数据类型 变量名 = 常量；</span><br></pre></td></tr></table></figure><p> 仍然使用pi来举例：</p><pre><code>const int pi = 3.14;</code></pre><p>下面用一个计算圆的面积的例子来演示const的使用方法：</p><pre><code>#include&lt;cstdio&gt;const double pi = 3.14;int main(){     double r = 3;     printf(&quot;%.2f\n&quot;,pi*r*r);     return 0;    }</code></pre><p>输出结果：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">28.26</span><br></pre></td></tr></table></figure><p>这两种方法都可以采用，<strong>一般推荐使用const</strong></p><ul><li>define除了可以定义常量之外，还可以用来<code>定义语句</code>，其格式如下：</li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define 标识符 语句常量</span><br></pre></td></tr></table></figure><p>例如可以定义一个加法的简单运算：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#define ADD(a,b)  ((a) + (b))</span><br></pre></td></tr></table></figure><p>这样就可以直接使用ADD(a,b) 来计算 a+b:</p><pre><code>#include&lt;cstdio&gt;#define ADD(a,b) ((a) + (b))int main(){    int num1 = 3;    int num2 = 4;    printf(&quot;%d&quot;,ADD(num1,num2));    return 0;}</code></pre><p>输出结果：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure><p>欢迎与我交流~</p><p><img src="https://img-blog.csdnimg.cn/2018121513305021.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;const和符号常量define的区别&quot;&gt;&lt;a href=&quot;#const和符号常量define的区别&quot; class=&quot;headerlink&quot; title=&quot;const和符号常量define的区别&quot;&gt;&lt;/a&gt;const和符号常量define的区别&lt;/h2&gt;&lt;ul&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="https://xxyxt.github.io/2019/01/08/hello-world/"/>
-    <id>https://xxyxt.github.io/2019/01/08/hello-world/</id>
-    <published>2019-01-08T08:13:18.162Z</published>
-    <updated>2019-01-08T08:13:18.162Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
 </feed>
