@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xxyxt.github.io/"/>
-  <updated>2019-01-11T02:21:45.991Z</updated>
+  <updated>2019-01-11T02:35:45.535Z</updated>
   <id>https://xxyxt.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装pyinstaller报错</title>
+    <link href="https://xxyxt.github.io/2019/01/11/%E5%AE%89%E8%A3%85%E6%8A%A5%E9%94%99/"/>
+    <id>https://xxyxt.github.io/2019/01/11/安装报错/</id>
+    <published>2019-01-11T02:28:47.000Z</published>
+    <updated>2019-01-11T02:35:45.535Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装pyinstaller报错：Python-library-not-in-binary-dependencies"><a href="#安装pyinstaller报错：Python-library-not-in-binary-dependencies" class="headerlink" title="安装pyinstaller报错：Python library not in binary dependencies"></a>安装pyinstaller报错：Python library not in binary dependencies</h2><h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>Centos7.0<br>Python3.6<br><a id="more"></a></p><h2 id="pyinstaller安装"><a href="#pyinstaller安装" class="headerlink" title="pyinstaller安装"></a>pyinstaller安装</h2><p>照着网上的一些教程安装了pyinstaller</p><pre><code>pip3 installer pyinstaller</code></pre><p>   将pyinstaller的路径添加到环境变量</p><pre><code>export PATH=$PATH:/usr/local/python3/lib/python3.6/site-packages</code></pre><p>修改配置文件，将上一条命令写入  /etc/profile 文件</p><pre><code>vi /etc/profile</code></pre><p>然后装完之后开始使用，试着打包自己刚刚写的一个py文件</p><pre><code>pyinstaller ex14.py</code></pre><p>然后就开始报错</p><pre><code>[root@VM_0_13_centos python_ex]# pyinstaller -F ex41.pyOSError: Python library not found: libpython3.6mu.so.1.0, libpython3.6.so.1.0, libpython3.6m.so.1.0This would mean your Python installation doesn&apos;t come with proper library files.This usually happens by missing development package, or unsuitable build parameters of Python installation.On Debian/Ubuntu, you would need to install Python development packages  * apt-get install python3-dev  * apt-get install python-dev  *  If you&apos;re building Python by yourself, please rebuild your Python with `--enable-shared` (or, `--enable-framework` on Darwin)</code></pre><p>解决办法<br>1打开  /etc/ld.so.conf 写入<br>/usr/local/lib64<br>/usr/local/lib</p><pre><code>vi /etc/ld.so.conf</code></pre><p>2</p><pre><code>ldconfig</code></pre><p>3</p><pre><code>pyinstaller ex14.py</code></pre><p>这样就解决问题了<br><img src="https://img-blog.csdn.net/20180927004219612?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装pyinstaller报错：Python-library-not-in-binary-dependencies&quot;&gt;&lt;a href=&quot;#安装pyinstaller报错：Python-library-not-in-binary-dependencies&quot; class=&quot;headerlink&quot; title=&quot;安装pyinstaller报错：Python library not in binary dependencies&quot;&gt;&lt;/a&gt;安装pyinstaller报错：Python library not in binary dependencies&lt;/h2&gt;&lt;h2 id=&quot;运行环境&quot;&gt;&lt;a href=&quot;#运行环境&quot; class=&quot;headerlink&quot; title=&quot;运行环境&quot;&gt;&lt;/a&gt;运行环境&lt;/h2&gt;&lt;p&gt;Centos7.0&lt;br&gt;Python3.6&lt;br&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="https://xxyxt.github.io/categories/python/"/>
+    
+    
+      <category term="经验" scheme="https://xxyxt.github.io/tags/%E7%BB%8F%E9%AA%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>使用Github+Hexo搭建自己的博客</title>
