@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="@[TOC] 01背包问题问题描述问题：有n件物品，每件物品重量为w[ i ]，价值为c[ i ]。现有一个容量为V的背包，问如何选取物品放入背包，使背包总价值最大，其中每个物品只有一件。样例：123n=5 V=83 5 1 2 2 // w[ i ]4 5 2 1 3 / / c[ i ] 显然，对于每件物品有两种选择，暴力解法复杂度为O($2^n$)用dp[i][v]表示第i件物品放入容量为v">
+<meta name="description" content="01背包问题问题描述问题：有n件物品，每件物品重量为w[ i ]，价值为c[ i ]。现有一个容量为V的背包，问如何选取物品放入背包，使背包总价值最大，其中每个物品只有一件。">
 <meta name="keywords" content="动态规划">
 <meta property="og:type" content="article">
 <meta property="og:title" content="01背包问题">
-<meta property="og:url" content="https://xxyxt.github.io/2019/01/11/csdn-export-md/index.html">
+<meta property="og:url" content="https://xxyxt.github.io/2019/01/11/01背包问题/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="@[TOC] 01背包问题问题描述问题：有n件物品，每件物品重量为w[ i ]，价值为c[ i ]。现有一个容量为V的背包，问如何选取物品放入背包，使背包总价值最大，其中每个物品只有一件。样例：123n=5 V=83 5 1 2 2 // w[ i ]4 5 2 1 3 / / c[ i ] 显然，对于每件物品有两种选择，暴力解法复杂度为O($2^n$)用dp[i][v]表示第i件物品放入容量为v">
+<meta property="og:description" content="01背包问题问题描述问题：有n件物品，每件物品重量为w[ i ]，价值为c[ i ]。现有一个容量为V的背包，问如何选取物品放入背包，使背包总价值最大，其中每个物品只有一件。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-11T12:22:19.885Z">
+<meta property="og:updated_time" content="2019-01-11T12:26:57.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01背包问题">
-<meta name="twitter:description" content="@[TOC] 01背包问题问题描述问题：有n件物品，每件物品重量为w[ i ]，价值为c[ i ]。现有一个容量为V的背包，问如何选取物品放入背包，使背包总价值最大，其中每个物品只有一件。样例：123n=5 V=83 5 1 2 2 // w[ i ]4 5 2 1 3 / / c[ i ] 显然，对于每件物品有两种选择，暴力解法复杂度为O($2^n$)用dp[i][v]表示第i件物品放入容量为v">
+<meta name="twitter:description" content="01背包问题问题描述问题：有n件物品，每件物品重量为w[ i ]，价值为c[ i ]。现有一个容量为V的背包，问如何选取物品放入背包，使背包总价值最大，其中每个物品只有一件。">
 
 
 
@@ -122,7 +122,7 @@
 
 
 
-  <link rel="canonical" href="https://xxyxt.github.io/2019/01/11/csdn-export-md/">
+  <link rel="canonical" href="https://xxyxt.github.io/2019/01/11/01背包问题/">
 
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/11/csdn-export-md/">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/11/01背包问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xxyxt">
@@ -347,8 +347,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/11/csdn-export-md/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/11/csdn-export-md/" itemprop="commentsCount"></span>
+                <a href="/2019/01/11/01背包问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/11/01背包问题/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  546
+                  545
                 </span>
               
 
@@ -412,19 +412,18 @@
       
 
       
-        <p>@[TOC]</p>
-<h2 id="01背包问题"><a href="#01背包问题" class="headerlink" title="01背包问题"></a>01背包问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>问题：有n件物品，每件物品重量为w[ i ]，价值为c[ i ]。现有一个容量为V的背包，问如何选取物品放入背包，使背包总价值最大，其中每个物品只有一件。<br>样例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n=5 V=8</span><br><span class="line">3 5 1 2 2 // w[ i ]</span><br><span class="line">4 5 2 1 3 / / c[ i ]</span><br></pre></td></tr></table></figure></p>
+        <h2 id="01背包问题"><a href="#01背包问题" class="headerlink" title="01背包问题"></a>01背包问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>问题：有n件物品，每件物品重量为w[ i ]，价值为c[ i ]。现有一个容量为V的背包，问如何选取物品放入背包，使背包总价值最大，其中每个物品只有一件。<br><a id="more"></a><br>样例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n=5 V=8</span><br><span class="line">3 5 1 2 2 // w[ i ]</span><br><span class="line">4 5 2 1 3 / / c[ i ]</span><br></pre></td></tr></table></figure></p>
 <p>显然，对于每件物品有两种选择，暴力解法复杂度为O($2^n$)<br>用dp[i][v]表示第i件物品放入容量为v的背包，则dp[i][v]的值求解有两种选择：</p>
 <ol>
 <li>不放入第i件物品，那么问题转化为前i-1件物品放入容量为v的背包获得的最大价值，dp[ i-1 ][ v ]</li>
-<li>放入第i件物品，那么问题转化为前i-1件物品放入容量为v-w[i]的背包获得的最大价值，dp[ i-1][ v-w[ i ] ]+c[ i ]</li>
+<li>放入第i件物品，那么问题转化为前i-1件物品放入容量为v-w[i]的背包获得的最大价值<br>dp[ i-1][ v-w[ i ] ]+c[ i ]</li>
 </ol>
 <p><strong>公式为</strong>：dp[ i ][ v ] = max{ dp[ i-1 ][ v ], dp[ i-1 ][ v - w[ i ] ] + c[ i ] }<br>第i件物品的状态，只与第i-1件物品的状态有关，所以可以通过边界dp[0][v]=0(0&lt;=v&lt;=V)，递推得到整个数组</p>
 <h4 id="二维数组实现代码："><a href="#二维数组实现代码：" class="headerlink" title="二维数组实现代码："></a>二维数组实现代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(int i=1;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">		for(int v=w[i];w[i]&lt;V;v++)</span><br><span class="line">		&#123;</span><br><span class="line">				dp[i][v]=max(dp[i-1][v],dp[i-1][v-w[i]]+c[i])</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>这样计算得出的dp[ n ][ V ]的值即为最大值</strong><br>其实上面的代码还可以在空间复杂度上进行优化，可以看出，在计算dp[i+1][v]的值时，dp[i-1][v]的值没有用到，因此不妨直接用一维数组来代替二维数组，枚举方向从1到n,v从V到0，状态转移方程变为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[ v ] = max(dp[ v ],dp[ v-w[ i ]]+c[ i ])</span><br></pre></td></tr></table></figure></p>
 <h4 id="一维数组实现代码："><a href="#一维数组实现代码：" class="headerlink" title="一维数组实现代码："></a>一维数组实现代码：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for(int i = 1;i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">		for(int v = V; v&gt;=w [ i ]; v--)</span><br><span class="line">		&#123;</span><br><span class="line">				dp[ v ] = max(dp[ v ], dp[ v - w[ i ]] + c[ i ]</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>这样得到的最大值，需要在数组dp里面找出最大值，不是dp[ V ]</strong></p>
-<h3 id="操作实例"><a href="#操作实例" class="headerlink" title="操作实例"></a>操作实例</h3><p><a href="https://www.nowcoder.com/practice/f9c6f980eeec43ef85be20755ddbeaf4?tpId=37&amp;tqId=21239&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">https://www.nowcoder.com/practice/f9c6f980eeec43ef85be20755ddbeaf4?tpId=37&amp;tqId=21239&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking</a></p>
+<h2 id="操作实例"><a href="#操作实例" class="headerlink" title="操作实例"></a>操作实例</h2><p><a href="https://www.nowcoder.com/practice/f9c6f980eeec43ef85be20755ddbeaf4?tpId=37&amp;tqId=21239&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">https://www.nowcoder.com/practice/f9c6f980eeec43ef85be20755ddbeaf4?tpId=37&amp;tqId=21239&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking</a></p>
 
       
     </div>
@@ -497,10 +496,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/11/undefined-First-Post-1/" rel="prev" title="test">
-                test <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -612,7 +607,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -700,7 +695,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#01背包问题"><span class="nav-number">1.</span> <span class="nav-text">01背包问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二维数组实现代码："><span class="nav-number">1.1.1.</span> <span class="nav-text">二维数组实现代码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一维数组实现代码："><span class="nav-number">1.1.2.</span> <span class="nav-text">一维数组实现代码：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作实例"><span class="nav-number">1.2.</span> <span class="nav-text">操作实例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#01背包问题"><span class="nav-number">1.</span> <span class="nav-text">01背包问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题描述"><span class="nav-number">1.1.</span> <span class="nav-text">问题描述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#二维数组实现代码："><span class="nav-number">1.1.1.</span> <span class="nav-text">二维数组实现代码：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一维数组实现代码："><span class="nav-number">1.1.2.</span> <span class="nav-text">一维数组实现代码：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作实例"><span class="nav-number">2.</span> <span class="nav-text">操作实例</span></a></li></ol></div>
             
 
           </div>
