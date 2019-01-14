@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xxyxt.github.io/"/>
-  <updated>2019-01-12T07:01:14.863Z</updated>
+  <updated>2019-01-14T12:13:12.716Z</updated>
   <id>https://xxyxt.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>二叉树的遍历</title>
+    <link href="https://xxyxt.github.io/2019/01/14/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%87%A0%E7%A7%8D%E9%81%8D%E5%8E%86%E6%96%B9%E6%B3%95/"/>
+    <id>https://xxyxt.github.io/2019/01/14/二叉树的几种遍历方法/</id>
+    <published>2019-01-14T12:02:20.000Z</published>
+    <updated>2019-01-14T12:13:12.716Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>二叉树的遍历指按照一定的顺序访问二叉树的所有节点</strong></p><p>访问方法一共四种：先序遍历，中序遍历，后续遍历，层序遍历<br>前三种遍历一般用DFS方法，层序遍历需要BFS方法<br>先、中、后序遍历，都是指的根节点的访问顺序<br>先序代码：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void preorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">if(root==NULL)</span><br><span class="line">&#123;</span><br><span class="line">return;</span><br><span class="line">&#123;</span><br><span class="line">cout&lt;&lt;root-&gt;data;</span><br><span class="line">preorder(root-&gt;left);</span><br><span class="line">preorder(root-&gt;right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>中序代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void inorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">if(root==NULL)</span><br><span class="line">&#123;</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br><span class="line">inorder(root-&gt;left);</span><br><span class="line">cout&lt;&lt;root-&gt;data;</span><br><span class="line">inorder(root-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>后续代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void postorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">if(root==NULL)</span><br><span class="line">&#123;</span><br><span class="line">return;</span><br><span class="line">&#125;</span><br><span class="line">postorder(root-&gt;left);</span><br><span class="line">postorder(root-&gt;right);</span><br><span class="line">cout&lt;&lt;root-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>层序遍历，是按照层次的顺序，访问节点，采用广度优先的访问方法结合队列实现操作，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void layerorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">queue&lt;node*&gt; q;</span><br><span class="line">q.push(root);</span><br><span class="line">while(!q.empty())</span><br><span class="line">&#123;</span><br><span class="line">node* now=q.front();</span><br><span class="line">q.pop();</span><br><span class="line">cout&lt;&lt;now-&gt;data;</span><br><span class="line">if(now-&gt;left!=NULL)</span><br><span class="line">&#123;</span><br><span class="line">q.push(now-&gt;left);</span><br><span class="line">&#125;</span><br><span class="line">if(now-&gt;right!=NULL)</span><br><span class="line">&#123;</span><br><span class="line">q.push(now-&gt;right);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;二叉树的遍历指按照一定的顺序访问二叉树的所有节点&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;访问方法一共四种：先序遍历，中序遍历，后续遍历，层序遍历&lt;br&gt;前三种遍历一般用DFS方法，层序遍历需要BFS方法&lt;br&gt;先、中、后序遍历，都是指的根节点的访问顺序&lt;br&gt;先序代码：&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://xxyxt.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="数据结构" scheme="https://xxyxt.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>最长回文子串</title>

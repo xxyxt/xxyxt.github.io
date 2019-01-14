@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="动态规划,">
+  <meta name="keywords" content="数据结构,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="问题描述：给出一个字符串S，求S的最长回文子串的长度。 例：字符串“ASDFGHGFDSB”的最长回文子串为“SDFGHGFDS”，长度为9。 显然暴力解法的不仅复杂度较大，而且超级繁琐，采用动态规划可以更好的解决这类问题">
-<meta name="keywords" content="动态规划">
+<meta name="description" content="二叉树的遍历指按照一定的顺序访问二叉树的所有节点 访问方法一共四种：先序遍历，中序遍历，后续遍历，层序遍历前三种遍历一般用DFS方法，层序遍历需要BFS方法先、中、后序遍历，都是指的根节点的访问顺序先序代码：">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最长回文子串">
-<meta property="og:url" content="https://xxyxt.github.io/2019/01/12/最长回文子串/index.html">
+<meta property="og:title" content="二叉树的遍历">
+<meta property="og:url" content="https://xxyxt.github.io/2019/01/14/二叉树的几种遍历方法/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="问题描述：给出一个字符串S，求S的最长回文子串的长度。 例：字符串“ASDFGHGFDSB”的最长回文子串为“SDFGHGFDS”，长度为9。 显然暴力解法的不仅复杂度较大，而且超级繁琐，采用动态规划可以更好的解决这类问题">
+<meta property="og:description" content="二叉树的遍历指按照一定的顺序访问二叉树的所有节点 访问方法一共四种：先序遍历，中序遍历，后续遍历，层序遍历前三种遍历一般用DFS方法，层序遍历需要BFS方法先、中、后序遍历，都是指的根节点的访问顺序先序代码：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-12T07:01:14.863Z">
+<meta property="og:updated_time" content="2019-01-14T12:13:12.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="最长回文子串">
-<meta name="twitter:description" content="问题描述：给出一个字符串S，求S的最长回文子串的长度。 例：字符串“ASDFGHGFDSB”的最长回文子串为“SDFGHGFDS”，长度为9。 显然暴力解法的不仅复杂度较大，而且超级繁琐，采用动态规划可以更好的解决这类问题">
+<meta name="twitter:title" content="二叉树的遍历">
+<meta name="twitter:description" content="二叉树的遍历指按照一定的顺序访问二叉树的所有节点 访问方法一共四种：先序遍历，中序遍历，后续遍历，层序遍历前三种遍历一般用DFS方法，层序遍历需要BFS方法先、中、后序遍历，都是指的根节点的访问顺序先序代码：">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://xxyxt.github.io/2019/01/12/最长回文子串/">
+  <link rel="canonical" href="https://xxyxt.github.io/2019/01/14/二叉树的几种遍历方法/">
 
 
 
 
 
-  <title>最长回文子串 | 下雪不下雨的个人博客</title>
+  <title>二叉树的遍历 | 下雪不下雨的个人博客</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/12/最长回文子串/">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/14/二叉树的几种遍历方法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xxyxt">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">最长回文子串</h1>
+          <h1 class="post-title" itemprop="name headline">二叉树的遍历</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-12T14:57:24+08:00">
-                2019-01-12
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-14T20:02:20+08:00">
+                2019-01-14
               </time>
             
 
@@ -329,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/博客/" itemprop="url" rel="index">
-                    <span itemprop="name">博客</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -347,8 +347,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/12/最长回文子串/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/12/最长回文子串/" itemprop="commentsCount"></span>
+                <a href="/2019/01/14/二叉树的几种遍历方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/14/二叉树的几种遍历方法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  566
+                  270
                 </span>
               
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  2
+                  1
                 </span>
               
             </div>
@@ -412,18 +412,11 @@
       
 
       
-        <h2 id="问题描述："><a href="#问题描述：" class="headerlink" title="问题描述："></a>问题描述：</h2><p>给出一个字符串S，求S的最长回文子串的长度。</p>
-<p>例：字符串“ASDFGHGFDSB”的最长回文子串为“SDFGHGFDS”，长度为9。</p>
-<p>显然暴力解法的不仅复杂度较大，而且超级繁琐，采用动态规划可以更好的解决这类问题<br><a id="more"></a></p>
-<p>令dp[i][j]表示S[i]至S[j]所表示的子串是否回文，是则为1，不是则为0.这样可以根据S[i]和S[j]是否相等分为两种情况：</p>
-<ol>
-<li>如果S[i]==S[j]，那么只要S[i+1]至S[j-1]是回文子串，那么S[i]至S[j]也是回文子串；如果S[i+1]至S[j-1]不是回文子串，那么S[i]至S[j]也不是回文子串；</li>
-<li>如果S[i]!=S[j]，那么S[i]至S[j]一定不是回文子串<br>边界：dp[i][i]=1, dp[i][i+1]=(S[i]==S[i+1])?1:0</li>
-</ol>
-<p><strong>注意：如果按照i和j从小到大的顺序来枚举子串的端点，然后更新dp[i][j]，这样会无法保证dp[i+1][j-1]已经得到计算，从而无法进行状态转移</strong>。</p>
-<p>因为边界的子串长度为1和2，所以可以考虑按照子串的长度和初始位置进行枚举，即第一遍将子串长度为3的dp值全部求出来，第二遍计算长度为4的子串可以通过计算出的长度为3的子串的dp值进行计算。这样问题就可以得到解决</p>
-<h3 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">const int maxn = 10010;</span><br><span class="line">char S[maxn];</span><br><span class="line">int dp[maxn][maxn];</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	gets(S);</span><br><span class="line">	int len = strlen(S);</span><br><span class="line">	int ans = 1; //初始化最长回文子串长度为1 </span><br><span class="line">	memset(dp, 0, sizeof(dp));</span><br><span class="line">	for (int i = 0; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[i][i] = 1;</span><br><span class="line">		if (i &lt; len - 1)</span><br><span class="line">		&#123;</span><br><span class="line">			if (S[i] == S[i + 1])</span><br><span class="line">			&#123;</span><br><span class="line">				dp[i][i + 1] = 1;</span><br><span class="line">				ans = 2;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	//状态转移方程</span><br><span class="line">	for (int L = 3; L &lt;= len; L++)</span><br><span class="line">	&#123;</span><br><span class="line">		for (int i = 0; i + L - 1 &lt; len; i++)</span><br><span class="line">		&#123;</span><br><span class="line">			int j = i + L - 1;</span><br><span class="line">			if (S[i] == S[j] &amp;&amp; dp[i + 1][j - 1] == 1)</span><br><span class="line">			&#123;</span><br><span class="line">				dp[i][j] = 1;</span><br><span class="line">				ans = L;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	printf(&quot;%d\n&quot;, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="操作实例"><a href="#操作实例" class="headerlink" title="操作实例"></a>操作实例</h3><p><a href="https://www.nowcoder.com/practice/12e081cd10ee4794a2bd70c7d68f5507?tpId=37&amp;tqId=21308&amp;tPage=5&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">https://www.nowcoder.com/practice/12e081cd10ee4794a2bd70c7d68f5507?tpId=37&amp;tqId=21308&amp;tPage=5&amp;rp=&amp;ru=%2Fta%2Fhuawei&amp;qru=%2Fta%2Fhuawei%2Fquestion-ranking</a></p>
+        <p><strong>二叉树的遍历指按照一定的顺序访问二叉树的所有节点</strong></p>
+<p>访问方法一共四种：先序遍历，中序遍历，后续遍历，层序遍历<br>前三种遍历一般用DFS方法，层序遍历需要BFS方法<br>先、中、后序遍历，都是指的根节点的访问顺序<br>先序代码：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void preorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">	if(root==NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return;</span><br><span class="line">	&#123;</span><br><span class="line">	cout&lt;&lt;root-&gt;data;</span><br><span class="line">	preorder(root-&gt;left);</span><br><span class="line">	preorder(root-&gt;right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>中序代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void inorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">	if(root==NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	inorder(root-&gt;left);</span><br><span class="line">	cout&lt;&lt;root-&gt;data;</span><br><span class="line">	inorder(root-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>后续代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void postorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">	if(root==NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	postorder(root-&gt;left);</span><br><span class="line">	postorder(root-&gt;right);</span><br><span class="line">	cout&lt;&lt;root-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>层序遍历，是按照层次的顺序，访问节点，采用广度优先的访问方法结合队列实现操作，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void layerorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">	queue&lt;node*&gt; q;</span><br><span class="line">	q.push(root);</span><br><span class="line">	while(!q.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		node* now=q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		cout&lt;&lt;now-&gt;data;</span><br><span class="line">		if(now-&gt;left!=NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			q.push(now-&gt;left);</span><br><span class="line">		&#125;</span><br><span class="line">		if(now-&gt;right!=NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			q.push(now-&gt;right);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -474,7 +467,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/动态规划/" rel="tag"># 动态规划</a>
+            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
           
         </div>
       
@@ -487,8 +480,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/11/01背包问题/" rel="next" title="01背包问题">
-                <i class="fa fa-chevron-left"></i> 01背包问题
+              <a href="/2019/01/12/最长回文子串/" rel="next" title="最长回文子串">
+                <i class="fa fa-chevron-left"></i> 最长回文子串
               </a>
             
           </div>
@@ -496,10 +489,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/14/二叉树的几种遍历方法/" rel="prev" title="二叉树的遍历">
-                二叉树的遍历 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -584,17 +573,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -689,22 +669,6 @@ var jiathis_config={
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述："><span class="nav-number">1.</span> <span class="nav-text">问题描述：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码如下："><span class="nav-number">1.1.</span> <span class="nav-text">代码如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作实例"><span class="nav-number">1.2.</span> <span class="nav-text">操作实例</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
