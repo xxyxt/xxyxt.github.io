@@ -47,16 +47,13 @@
     <link href="https://xxyxt.github.io/2019/01/15/Java%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%E6%80%A7/"/>
     <id>https://xxyxt.github.io/2019/01/15/Java类的继承性/</id>
     <published>2019-01-15T01:56:27.641Z</published>
-    <updated>2019-01-15T02:19:02.691Z</updated>
+    <updated>2019-01-15T06:58:48.657Z</updated>
     
-    <content type="html"><![CDATA[<p>继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作<br>语法实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class 子类 extends 父类&#123;&#125;</span><br></pre></td></tr></table></figure></p><p>继承性的限制：<br>限制一：不可以多重继承，可以多层继承</p><ul><li>class A extends C,D    错误</li><li>class A{}    class B extends A{}    class C extends B{}</li><li>继承的层次不要过多<br>限制二：子类继承父类，会继承父类的全部操作，但是对于对于私有操作属于隐式继承，非私有操作属于显示继承<br>限制三：子类对象构造前，一定会默认调用<strong>父类的构造</strong>，父类对象先实例化，子类对象后实例化，所以子类对象相当于隐含了super()的 语句调用</li><li>注：父类中提供无参构造时，是否编写super()没有区别，如果没有无参构造，则必须明确使用super()调用父类指定的构造方法</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作<br><a id="more"></a><br>语法实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class 子类 extends 父类&#123;&#125;</span><br></pre></td></tr></table></figure></p><p>继承性的限制：<br>限制一：不可以多重继承，可以多层继承</p><ul><li>class A extends C,D    错误</li><li>class A{}    class B extends A{}    class C extends B{}</li><li>继承的层次不要过多<br>限制二：子类继承父类，会继承父类的全部操作，但是对于对于私有操作属于隐式继承，非私有操作属于显示继承<br>限制三：子类对象构造前，一定会默认调用<strong>父类的构造</strong>，父类对象先实例化，子类对象后实例化，所以子类对象相当于隐含了super()的 语句调用</li><li>注：父类中提供无参构造时，是否编写super()没有区别，如果没有无参构造，则必须明确使用super()调用父类指定的构造方法</li></ul>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作&lt;br&gt;语法实现：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
-      
+      &lt;p&gt;继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作&lt;br&gt;
     
     </summary>
     
