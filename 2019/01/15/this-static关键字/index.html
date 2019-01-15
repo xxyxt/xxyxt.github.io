@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="数据结构,">
+  <meta name="keywords" content="Java,">
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="二叉树的遍历指按照一定的顺序访问二叉树的所有节点 访问方法一共四种：先序遍历，中序遍历，后续遍历，层序遍历前三种遍历一般用DFS方法，层序遍历需要BFS方法先、中、后序遍历，都是指的根节点的访问顺序先序代码：">
-<meta name="keywords" content="数据结构">
+<meta name="description" content="this 关键字的用法Java开发离不开关键字this,this有三类用法： 调用本类属性为了避免类的属性名称和方法参数名称的重复，需要用this.属性的形式，来明确指明调用的是属性而不是参数注：为了避免不必要的麻烦，在访问类的属性时，不管名称重复与否，都加上this关键字 调用本类方法类中的方法主要有两种：普通和构造方法。所以调用本类方法也有两种形式：  普通方法：this.方法()  构造方法">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="二叉树的遍历">
-<meta property="og:url" content="https://xxyxt.github.io/2019/01/14/二叉树的几种遍历方法/index.html">
+<meta property="og:title" content="static this 关键字的用法">
+<meta property="og:url" content="https://xxyxt.github.io/2019/01/15/this-static关键字/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="二叉树的遍历指按照一定的顺序访问二叉树的所有节点 访问方法一共四种：先序遍历，中序遍历，后续遍历，层序遍历前三种遍历一般用DFS方法，层序遍历需要BFS方法先、中、后序遍历，都是指的根节点的访问顺序先序代码：">
+<meta property="og:description" content="this 关键字的用法Java开发离不开关键字this,this有三类用法： 调用本类属性为了避免类的属性名称和方法参数名称的重复，需要用this.属性的形式，来明确指明调用的是属性而不是参数注：为了避免不必要的麻烦，在访问类的属性时，不管名称重复与否，都加上this关键字 调用本类方法类中的方法主要有两种：普通和构造方法。所以调用本类方法也有两种形式：  普通方法：this.方法()  构造方法">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-14T12:13:12.716Z">
+<meta property="og:updated_time" content="2019-01-15T06:54:26.690Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="二叉树的遍历">
-<meta name="twitter:description" content="二叉树的遍历指按照一定的顺序访问二叉树的所有节点 访问方法一共四种：先序遍历，中序遍历，后续遍历，层序遍历前三种遍历一般用DFS方法，层序遍历需要BFS方法先、中、后序遍历，都是指的根节点的访问顺序先序代码：">
+<meta name="twitter:title" content="static this 关键字的用法">
+<meta name="twitter:description" content="this 关键字的用法Java开发离不开关键字this,this有三类用法： 调用本类属性为了避免类的属性名称和方法参数名称的重复，需要用this.属性的形式，来明确指明调用的是属性而不是参数注：为了避免不必要的麻烦，在访问类的属性时，不管名称重复与否，都加上this关键字 调用本类方法类中的方法主要有两种：普通和构造方法。所以调用本类方法也有两种形式：  普通方法：this.方法()  构造方法">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://xxyxt.github.io/2019/01/14/二叉树的几种遍历方法/">
+  <link rel="canonical" href="https://xxyxt.github.io/2019/01/15/this-static关键字/">
 
 
 
 
 
-  <title>二叉树的遍历 | 下雪不下雨的个人博客</title>
+  <title>static this 关键字的用法 | 下雪不下雨的个人博客</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/14/二叉树的几种遍历方法/">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/15/this-static关键字/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xxyxt">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">二叉树的遍历</h1>
+          <h1 class="post-title" itemprop="name headline">static this 关键字的用法</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-14T20:02:20+08:00">
-                2019-01-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-15T10:24:03+08:00">
+                2019-01-15
               </time>
             
 
@@ -347,8 +347,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/14/二叉树的几种遍历方法/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/14/二叉树的几种遍历方法/" itemprop="commentsCount"></span>
+                <a href="/2019/01/15/this-static关键字/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/15/this-static关键字/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  270
+                  603
                 </span>
               
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -412,11 +412,49 @@
       
 
       
-        <p><strong>二叉树的遍历指按照一定的顺序访问二叉树的所有节点</strong></p>
-<p>访问方法一共四种：先序遍历，中序遍历，后续遍历，层序遍历<br>前三种遍历一般用DFS方法，层序遍历需要BFS方法<br>先、中、后序遍历，都是指的根节点的访问顺序<br>先序代码：<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void preorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">	if(root==NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return;</span><br><span class="line">	&#123;</span><br><span class="line">	cout&lt;&lt;root-&gt;data;</span><br><span class="line">	preorder(root-&gt;left);</span><br><span class="line">	preorder(root-&gt;right)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>中序代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void inorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">	if(root==NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	inorder(root-&gt;left);</span><br><span class="line">	cout&lt;&lt;root-&gt;data;</span><br><span class="line">	inorder(root-&gt;right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>后续代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void postorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">	if(root==NULL)</span><br><span class="line">	&#123;</span><br><span class="line">		return;</span><br><span class="line">	&#125;</span><br><span class="line">	postorder(root-&gt;left);</span><br><span class="line">	postorder(root-&gt;right);</span><br><span class="line">	cout&lt;&lt;root-&gt;data;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>层序遍历，是按照层次的顺序，访问节点，采用广度优先的访问方法结合队列实现操作，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">void layerorder(node* root)</span><br><span class="line">&#123;</span><br><span class="line">	queue&lt;node*&gt; q;</span><br><span class="line">	q.push(root);</span><br><span class="line">	while(!q.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		node* now=q.front();</span><br><span class="line">		q.pop();</span><br><span class="line">		cout&lt;&lt;now-&gt;data;</span><br><span class="line">		if(now-&gt;left!=NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			q.push(now-&gt;left);</span><br><span class="line">		&#125;</span><br><span class="line">		if(now-&gt;right!=NULL)</span><br><span class="line">		&#123;</span><br><span class="line">			q.push(now-&gt;right);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h2 id="this-关键字的用法"><a href="#this-关键字的用法" class="headerlink" title="this 关键字的用法"></a>this 关键字的用法</h2><p>Java开发离不开关键字this,this有三类用法：</p>
+<h3 id="调用本类属性"><a href="#调用本类属性" class="headerlink" title="调用本类属性"></a>调用本类属性</h3><p>为了避免类的<strong>属性名称</strong>和<strong>方法参数名称</strong>的重复，需要用<strong>this.</strong>属性的形式，来明确指明调用的是属性而不是参数<br>注：为了避免不必要的麻烦，在访问类的属性时，不管名称重复与否，都加上this关键字</p>
+<h3 id="调用本类方法"><a href="#调用本类方法" class="headerlink" title="调用本类方法"></a>调用本类方法</h3><p>类中的方法主要有两种：普通和构造方法。所以调用本类方法也有两种形式：</p>
+<ul>
+<li><p>普通方法：this.方法()</p>
+</li>
+<li><p>构造方法：this()</p>
+<p>注：用this(),可以很好解决构造方法中的代码重复问题</p>
+</li>
+</ul>
+<h3 id="表示当前对象"><a href="#表示当前对象" class="headerlink" title="表示当前对象"></a>表示当前对象</h3><ul>
+<li>表示当前调用类中方法的实例化对象</li>
+</ul>
+<h2 id="static-关键字的用法"><a href="#static-关键字的用法" class="headerlink" title="static 关键字的用法"></a>static 关键字的用法</h2><h3 id="定义属性"><a href="#定义属性" class="headerlink" title="定义属性"></a>定义属性</h3><ul>
+<li>在声明属性前加上static关键字，表示公共属性</li>
+<li><p>公共属性，任何一个对象修改了此属性的内容都会影响其他的对象。好比一个人有多个名字，小张、狗蛋、二狗子，如果小张的腿摔断了，那么狗蛋和二狗子的腿也会摔断，因为他们是同一个人</p>
+</li>
+<li><p>static定义的属性保存在<strong>全局数据区</strong></p>
+</li>
+<li><p>static定义的属性可以由类直接调用，而非static属性必须在实例化对象之后，由对象调用</p>
+</li>
+<li><p>定义共享属性的时候才会使用static，一般情况都是使用非属性</p>
+</li>
+</ul>
+<h3 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h3><p>和定义属性一样，使用static定义普通方法时，没有经过实例化产生对象可以直接由类名直接调用</p>
+<p>注意：</p>
+<ul>
+<li>static方法不能直接访问非static方法或属性</li>
+<li>非static方法可以直接调用或访问static方法</li>
+</ul>
+<p>原因：</p>
+<ul>
+<li>非static结构在实例化对象之后才会分配堆空间，才可以使用</li>
+<li>static不受实例化对象的控制</li>
+</ul>
+<h2 id="public-static-void-main-String-args"><a href="#public-static-void-main-String-args" class="headerlink" title="public static void main(String args[])"></a>public static void main(String args[])</h2><p>刚刚开始接触java时，感觉这个一大串好长，每个部分究竟各自代表什么意义，不写其中的任何一项可不可以</p>
+<ul>
+<li>public：表示此方法对任何操作都是可见的</li>
+<li>static：此类方法由类名直接调用</li>
+<li>void: 表示返回值为空</li>
+<li>main: 规定的名称</li>
+<li>String args[]: 程序运行时传递的参数，java类名 参数 参数 参数</li>
+</ul>
 
       
     </div>
@@ -467,7 +505,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数据结构/" rel="tag"># 数据结构</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -480,8 +518,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/12/最长回文子串/" rel="next" title="最长回文子串">
-                <i class="fa fa-chevron-left"></i> 最长回文子串
+              <a href="/2019/01/15/Java类的继承性/" rel="next" title="Java类的继承性">
+                <i class="fa fa-chevron-left"></i> Java类的继承性
               </a>
             
           </div>
@@ -489,10 +527,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/15/Java类的继承性/" rel="prev" title="Java类的继承性">
-                Java类的继承性 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -577,8 +611,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -673,6 +716,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#this-关键字的用法"><span class="nav-number">1.</span> <span class="nav-text">this 关键字的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用本类属性"><span class="nav-number">1.1.</span> <span class="nav-text">调用本类属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用本类方法"><span class="nav-number">1.2.</span> <span class="nav-text">调用本类方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表示当前对象"><span class="nav-number">1.3.</span> <span class="nav-text">表示当前对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#static-关键字的用法"><span class="nav-number">2.</span> <span class="nav-text">static 关键字的用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义属性"><span class="nav-number">2.1.</span> <span class="nav-text">定义属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义方法"><span class="nav-number">2.2.</span> <span class="nav-text">定义方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#public-static-void-main-String-args"><span class="nav-number">3.</span> <span class="nav-text">public static void main(String args[])</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xxyxt.github.io/"/>
-  <updated>2019-01-14T12:13:12.716Z</updated>
+  <updated>2019-01-15T06:54:26.690Z</updated>
   <id>https://xxyxt.github.io/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>static this 关键字的用法</title>
+    <link href="https://xxyxt.github.io/2019/01/15/this-static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
+    <id>https://xxyxt.github.io/2019/01/15/this-static关键字/</id>
+    <published>2019-01-15T02:24:03.984Z</published>
+    <updated>2019-01-15T06:54:26.690Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="this-关键字的用法"><a href="#this-关键字的用法" class="headerlink" title="this 关键字的用法"></a>this 关键字的用法</h2><p>Java开发离不开关键字this,this有三类用法：</p><h3 id="调用本类属性"><a href="#调用本类属性" class="headerlink" title="调用本类属性"></a>调用本类属性</h3><p>为了避免类的<strong>属性名称</strong>和<strong>方法参数名称</strong>的重复，需要用<strong>this.</strong>属性的形式，来明确指明调用的是属性而不是参数<br>注：为了避免不必要的麻烦，在访问类的属性时，不管名称重复与否，都加上this关键字</p><h3 id="调用本类方法"><a href="#调用本类方法" class="headerlink" title="调用本类方法"></a>调用本类方法</h3><p>类中的方法主要有两种：普通和构造方法。所以调用本类方法也有两种形式：</p><ul><li><p>普通方法：this.方法()</p></li><li><p>构造方法：this()</p><p>注：用this(),可以很好解决构造方法中的代码重复问题</p></li></ul><h3 id="表示当前对象"><a href="#表示当前对象" class="headerlink" title="表示当前对象"></a>表示当前对象</h3><ul><li>表示当前调用类中方法的实例化对象</li></ul><h2 id="static-关键字的用法"><a href="#static-关键字的用法" class="headerlink" title="static 关键字的用法"></a>static 关键字的用法</h2><h3 id="定义属性"><a href="#定义属性" class="headerlink" title="定义属性"></a>定义属性</h3><ul><li>在声明属性前加上static关键字，表示公共属性</li><li><p>公共属性，任何一个对象修改了此属性的内容都会影响其他的对象。好比一个人有多个名字，小张、狗蛋、二狗子，如果小张的腿摔断了，那么狗蛋和二狗子的腿也会摔断，因为他们是同一个人</p></li><li><p>static定义的属性保存在<strong>全局数据区</strong></p></li><li><p>static定义的属性可以由类直接调用，而非static属性必须在实例化对象之后，由对象调用</p></li><li><p>定义共享属性的时候才会使用static，一般情况都是使用非属性</p></li></ul><h3 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h3><p>和定义属性一样，使用static定义普通方法时，没有经过实例化产生对象可以直接由类名直接调用</p><p>注意：</p><ul><li>static方法不能直接访问非static方法或属性</li><li>非static方法可以直接调用或访问static方法</li></ul><p>原因：</p><ul><li>非static结构在实例化对象之后才会分配堆空间，才可以使用</li><li>static不受实例化对象的控制</li></ul><h2 id="public-static-void-main-String-args"><a href="#public-static-void-main-String-args" class="headerlink" title="public static void main(String args[])"></a>public static void main(String args[])</h2><p>刚刚开始接触java时，感觉这个一大串好长，每个部分究竟各自代表什么意义，不写其中的任何一项可不可以</p><ul><li>public：表示此方法对任何操作都是可见的</li><li>static：此类方法由类名直接调用</li><li>void: 表示返回值为空</li><li>main: 规定的名称</li><li>String args[]: 程序运行时传递的参数，java类名 参数 参数 参数</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;this-关键字的用法&quot;&gt;&lt;a href=&quot;#this-关键字的用法&quot; class=&quot;headerlink&quot; title=&quot;this 关键字的用法&quot;&gt;&lt;/a&gt;this 关键字的用法&lt;/h2&gt;&lt;p&gt;Java开发离不开关键字this,this有三类用法：&lt;/p&gt;
+&lt;h
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://xxyxt.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Java" scheme="https://xxyxt.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java类的继承性</title>
+    <link href="https://xxyxt.github.io/2019/01/15/Java%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF%E6%80%A7/"/>
+    <id>https://xxyxt.github.io/2019/01/15/Java类的继承性/</id>
+    <published>2019-01-15T01:56:27.641Z</published>
+    <updated>2019-01-15T02:19:02.691Z</updated>
+    
+    <content type="html"><![CDATA[<p>继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作<br>语法实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class 子类 extends 父类&#123;&#125;</span><br></pre></td></tr></table></figure></p><p>继承性的限制：<br>限制一：不可以多重继承，可以多层继承</p><ul><li>class A extends C,D    错误</li><li>class A{}    class B extends A{}    class C extends B{}</li><li>继承的层次不要过多<br>限制二：子类继承父类，会继承父类的全部操作，但是对于对于私有操作属于隐式继承，非私有操作属于显示继承<br>限制三：子类对象构造前，一定会默认调用<strong>父类的构造</strong>，父类对象先实例化，子类对象后实例化，所以子类对象相当于隐含了super()的 语句调用</li><li>注：父类中提供无参构造时，是否编写super()没有区别，如果没有无参构造，则必须明确使用super()调用父类指定的构造方法</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作&lt;br&gt;语法实现：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gut
+      
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://xxyxt.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Java" scheme="https://xxyxt.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>二叉树的遍历</title>
