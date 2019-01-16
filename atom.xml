@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xxyxt.github.io/"/>
-  <updated>2019-01-15T12:53:16.725Z</updated>
+  <updated>2019-01-16T03:09:19.014Z</updated>
   <id>https://xxyxt.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://xxyxt.github.io/2019/01/15/%E5%A4%9A%E6%80%81%E6%80%A7/"/>
     <id>https://xxyxt.github.io/2019/01/15/多态性/</id>
     <published>2019-01-15T12:35:19.857Z</published>
-    <updated>2019-01-15T12:53:16.725Z</updated>
+    <updated>2019-01-16T03:09:19.014Z</updated>
     
-    <content type="html"><![CDATA[<p>多态性主要在两个方面：</p><ol><li><p>方法多态</p><ul><li>覆写</li><li>重载</li></ul></li><li><p>对象多态</p><ul><li>对象的多态性为父子类对象的转换</li><li>向上转型：父类 父类对象 = 子类实例</li><li>向下转型：子类 子类对象 = (子类) 父类实例</li></ul></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>多态性主要在两个方面：</p><ol><li><p>方法多态</p><ul><li>覆写</li><li>重载</li></ul></li><li><p>对象多态</p><ul><li>对象的多态性为父子类对象的转换</li><li>向上转型：父类 父类对象 = 子类实例</li><li>向下转型：子类 子类对象 = (子类) 父类实例</li><li>必须发生向上转型之后才可以发生向下转型</li></ul></li></ol>]]></content>
     
     <summary type="html">
     
@@ -76,11 +76,11 @@
   </entry>
   
   <entry>
-    <title>static this final关键字的用法</title>
+    <title>Java关键字</title>
     <link href="https://xxyxt.github.io/2019/01/15/this-static%E5%85%B3%E9%94%AE%E5%AD%97/"/>
     <id>https://xxyxt.github.io/2019/01/15/this-static关键字/</id>
     <published>2019-01-15T02:24:03.984Z</published>
-    <updated>2019-01-15T12:20:36.739Z</updated>
+    <updated>2019-01-16T01:54:47.717Z</updated>
     
     <content type="html"><![CDATA[<h2 id="this-关键字的用法"><a href="#this-关键字的用法" class="headerlink" title="this 关键字的用法"></a>this 关键字的用法</h2><p>Java开发离不开关键字this,this有三类用法：</p><h3 id="调用本类属性"><a href="#调用本类属性" class="headerlink" title="调用本类属性"></a>调用本类属性</h3><p>为了避免类的<strong>属性名称</strong>和<strong>方法参数名称</strong>的重复，需要用<strong>this.</strong>属性的形式，来明确指明调用的是属性而不是参数<br>注：为了避免不必要的麻烦，在访问类的属性时，不管名称重复与否，都加上this关键字</p><a id="more"></a><h3 id="调用本类方法"><a href="#调用本类方法" class="headerlink" title="调用本类方法"></a>调用本类方法</h3><p>类中的方法主要有两种：普通和构造方法。所以调用本类方法也有两种形式：</p><ul><li><p>普通方法：this.方法()</p></li><li><p>构造方法：this()</p><p>注：用this(),可以很好解决构造方法中的代码重复问题</p></li></ul><h3 id="表示当前对象"><a href="#表示当前对象" class="headerlink" title="表示当前对象"></a>表示当前对象</h3><ul><li>表示当前调用类中方法的实例化对象</li></ul><h2 id="static-关键字的用法"><a href="#static-关键字的用法" class="headerlink" title="static 关键字的用法"></a>static 关键字的用法</h2><h3 id="定义属性"><a href="#定义属性" class="headerlink" title="定义属性"></a>定义属性</h3><ul><li>在声明属性前加上static关键字，表示公共属性</li><li><p>公共属性，任何一个对象修改了此属性的内容都会影响其他的对象。好比一个人有多个名字，小张、狗蛋、二狗子，如果小张的腿摔断了，那么狗蛋和二狗子的腿也会摔断，因为他们是同一个人</p></li><li><p>static定义的属性保存在<strong>全局数据区</strong></p></li><li><p>static定义的属性可以由类直接调用，而非static属性必须在实例化对象之后，由对象调用</p></li><li><p>定义共享属性的时候才会使用static，一般情况都是使用非属性</p></li></ul><h3 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h3><p>和定义属性一样，使用static定义普通方法时，没有经过实例化产生对象可以直接由类名直接调用</p><p>注意：</p><ul><li>static方法不能直接访问非static方法或属性</li><li>非static方法可以直接调用或访问static方法</li></ul><p>原因：</p><ul><li>非static结构在实例化对象之后才会分配堆空间，才可以使用</li><li>static不受实例化对象的控制</li></ul><h2 id="public-static-void-main-String-args"><a href="#public-static-void-main-String-args" class="headerlink" title="public static void main(String args[])"></a>public static void main(String args[])</h2><p>刚刚开始接触java时，感觉这个一大串好长，每个部分究竟各自代表什么意义，不写其中的任何一项可不可以</p><ul><li>public：表示此方法对任何操作都是可见的</li><li>static：此类方法由类名直接调用</li><li>void: 表示返回值为空</li><li>main: 规定的名称</li><li>String args[]: 程序运行时传递的参数，java类名 参数 参数 参数</li></ul><h2 id="final关键字的用法"><a href="#final关键字的用法" class="headerlink" title="final关键字的用法"></a>final关键字的用法</h2><ul><li><p>使用final定义的类不能再有子类，String类就是final定义的类</p></li><li><p>final定义的方法不能够被覆写 <figure class="highlight plain"><figcaption><span>final void fun()```</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- final定义的变量变为常量 类似于C++里面的 const</span><br><span class="line"></span><br><span class="line">- 全局常量：即用public static final 3个关键字定义的常量 ``` public static final String xxy=&quot;LOVE&quot;</span><br></pre></td></tr></table></figure></p></li></ul>]]></content>
     
