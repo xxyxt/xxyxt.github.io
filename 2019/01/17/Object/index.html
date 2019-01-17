@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作">
+<meta name="description" content="Object类是所有类的父类，在定义类时，如果没有明确定义继承哪一种类，那就是继承Object类Object类的三个覆写方法：  public String toString()             取得对象信息 public boolean equals(Object obj)    对象比较 public int hashCode()                取得对象的哈希值">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java类的继承性">
-<meta property="og:url" content="https://xxyxt.github.io/2019/01/15/Java类的继承性/index.html">
+<meta property="og:title" content="Object类">
+<meta property="og:url" content="https://xxyxt.github.io/2019/01/17/Object/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作">
+<meta property="og:description" content="Object类是所有类的父类，在定义类时，如果没有明确定义继承哪一种类，那就是继承Object类Object类的三个覆写方法：  public String toString()             取得对象信息 public boolean equals(Object obj)    对象比较 public int hashCode()                取得对象的哈希值">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-15T06:58:48.657Z">
+<meta property="og:updated_time" content="2019-01-17T08:06:16.330Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java类的继承性">
-<meta name="twitter:description" content="继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作">
+<meta name="twitter:title" content="Object类">
+<meta name="twitter:description" content="Object类是所有类的父类，在定义类时，如果没有明确定义继承哪一种类，那就是继承Object类Object类的三个覆写方法：  public String toString()             取得对象信息 public boolean equals(Object obj)    对象比较 public int hashCode()                取得对象的哈希值">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://xxyxt.github.io/2019/01/15/Java类的继承性/">
+  <link rel="canonical" href="https://xxyxt.github.io/2019/01/17/Object/">
 
 
 
 
 
-  <title>Java类的继承性 | 下雪不下雨的个人博客</title>
+  <title>Object类 | 下雪不下雨的个人博客</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/15/Java类的继承性/">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/17/Object/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xxyxt">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java类的继承性</h1>
+          <h1 class="post-title" itemprop="name headline">Object类</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-15T09:56:27+08:00">
-                2019-01-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-17T15:23:02+08:00">
+                2019-01-17
               </time>
             
 
@@ -329,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
                   </a>
                 </span>
 
@@ -347,8 +347,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/15/Java类的继承性/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/15/Java类的继承性/" itemprop="commentsCount"></span>
+                <a href="/2019/01/17/Object/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/17/Object/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  273
+                  617
                 </span>
               
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  2
                 </span>
               
             </div>
@@ -412,14 +412,18 @@
       
 
       
-        <p>继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作<br><a id="more"></a><br>语法实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class 子类 extends 父类&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>继承性的限制：<br>限制一：不可以多重继承，可以多层继承</p>
+        <p>Object类是所有类的父类，在定义类时，如果没有明确定义继承哪一种类，那就是继承Object类<br>Object类的三个覆写方法：</p>
 <ul>
-<li>class A extends C,D    错误</li>
-<li>class A{}    class B extends A{}    class C extends B{}</li>
-<li>继承的层次不要过多<br>限制二：子类继承父类，会继承父类的全部操作，但是对于对于私有操作属于隐式继承，非私有操作属于显示继承<br>限制三：子类对象构造前，一定会默认调用<strong>父类的构造</strong>，父类对象先实例化，子类对象后实例化，所以子类对象相当于隐含了super()的 语句调用</li>
-<li>注：父类中提供无参构造时，是否编写super()没有区别，如果没有无参构造，则必须明确使用super()调用父类指定的构造方法</li>
+<li>public String toString()             取得对象信息</li>
+<li>public boolean equals(Object obj)    对象比较</li>
+<li>public int hashCode()                取得对象的哈希值</li>
 </ul>
+<a id="more"></a>
+<h2 id="toString-取得对象信息"><a href="#toString-取得对象信息" class="headerlink" title="toString() 取得对象信息"></a>toString() 取得对象信息</h2><p><strong>默认情况下，直接输出一个对象，会输出对象的编码</strong> 但是String类型却不是如此，代码如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Book extends Object&#123;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">public class testDemo4 &#123;</span><br><span class="line">	public static void main(String args[]) &#123;</span><br><span class="line">		Object A=new Book();</span><br><span class="line">		Object B=&quot;xxyxt&quot;;</span><br><span class="line">		System.out.println(A);</span><br><span class="line">		System.out.println(A.toString());</span><br><span class="line">		System.out.println(B);</span><br><span class="line">		System.out.println(B.toString());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">// 输出结果：</span><br><span class="line">Book@15db9742</span><br><span class="line">Book@15db9742</span><br><span class="line">xxyxt</span><br><span class="line">xxyxt</span><br></pre></td></tr></table></figure></p>
+<p><strong>可以看出：在输出一个对象时，不管调用和toString与否，都会直接输出对象的编码，但是在输出String类的时候，没有输出对象的编码，这是因为，String类中已经覆写了toString方法</strong></p>
+<p>下面覆写一个toString()方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">class BB&#123;</span><br><span class="line">	private double price;</span><br><span class="line">	private String name;</span><br><span class="line">	public BB(String name,double price) &#123;</span><br><span class="line">		this.name=name;</span><br><span class="line">		this.price=price;</span><br><span class="line">	&#125;</span><br><span class="line">	public String toString() &#123;</span><br><span class="line">		return &quot;书名:&quot; +this.name + &quot;价格：&quot;+this.price; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class testDemo5 &#123;</span><br><span class="line">	public static void main(String args[]) &#123;</span><br><span class="line">		BB b=new BB(&quot;Java从入门到放弃&quot;,48.9);</span><br><span class="line">		System.out.println(b);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//输出结果：</span><br><span class="line">书名:Java从入门到放弃  价格：48.9</span><br></pre></td></tr></table></figure></p>
+<h2 id="equals-对象比较"><a href="#equals-对象比较" class="headerlink" title="equals() 对象比较"></a>equals() 对象比较</h2><p>默认的equals方法比较的是对象的内存地址数值，但是这并不符合真正的对象比较的需要，通过覆写，可以实现对象的比较的标准方法，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class Book extends Object&#123;</span><br><span class="line">	private String name;</span><br><span class="line">	private double price;</span><br><span class="line">	public Book(String name,double price) &#123;</span><br><span class="line">		this.name=name;</span><br><span class="line">		this.price=price;</span><br><span class="line">	&#125;</span><br><span class="line">	public boolean equals(Object obj) &#123;</span><br><span class="line">		if(this==obj)&#123;</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">		if(obj==null) &#123;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">		if(!(obj instanceof Book)) &#123;</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">		Book book=(Book) obj;</span><br><span class="line">		if(this.name.equals(book.name) &amp;&amp; this.price==book.price)&#123;</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">		return false;</span><br><span class="line">	</span><br><span class="line">	&#125;</span><br><span class="line">	public String toString()&#123;</span><br><span class="line">		return &quot;书名：&quot;+ this.name +&quot;价格：&quot;+this.price;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">public class testDemo4 &#123;</span><br><span class="line">	public static void main(String args[]) &#123;</span><br><span class="line">		Book b1=new Book(&quot;入坑&quot;,99.9);</span><br><span class="line">		Book b2=new Book(&quot;脱坑&quot;,0.01);</span><br><span class="line">		System.out.println(b1.equals(b2));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Object类与引用数据类型"><a href="#Object类与引用数据类型" class="headerlink" title="Object类与引用数据类型"></a>Object类与引用数据类型</h2><p>Object是所有类的父类，可以接受所有类的对象，同时夜里可以接收所有引用数据类型，包括数组/接口/类<br>注意：接口不会继承任何类，相应的也不会继承Object类，可以使用Object接收是因为接口是引用数据类型</p>
 
       
     </div>
@@ -483,8 +487,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/14/二叉树的几种遍历方法/" rel="next" title="二叉树的遍历">
-                <i class="fa fa-chevron-left"></i> 二叉树的遍历
+              <a href="/2019/01/17/接口/" rel="next" title="接口">
+                <i class="fa fa-chevron-left"></i> 接口
               </a>
             
           </div>
@@ -492,10 +496,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/15/this-static关键字/" rel="prev" title="Java关键字">
-                Java关键字 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,8 +580,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -676,6 +685,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#toString-取得对象信息"><span class="nav-number">1.</span> <span class="nav-text">toString() 取得对象信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals-对象比较"><span class="nav-number">2.</span> <span class="nav-text">equals() 对象比较</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object类与引用数据类型"><span class="nav-number">3.</span> <span class="nav-text">Object类与引用数据类型</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
