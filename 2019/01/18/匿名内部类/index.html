@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作">
+<meta name="description" content="内部类： 在一个类的内部定义了另外一个类，利用内部类，可以实现私有属性的互相访问  匿名内部类： 没有名字的内部类，必须在抽象类和接口的基础上才可以定义">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java类的继承性">
-<meta property="og:url" content="https://xxyxt.github.io/2019/01/15/Java类的继承性/index.html">
+<meta property="og:title" content="匿名内部类">
+<meta property="og:url" content="https://xxyxt.github.io/2019/01/18/匿名内部类/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作">
+<meta property="og:description" content="内部类： 在一个类的内部定义了另外一个类，利用内部类，可以实现私有属性的互相访问  匿名内部类： 没有名字的内部类，必须在抽象类和接口的基础上才可以定义">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-15T06:58:48.657Z">
+<meta property="og:updated_time" content="2019-01-18T06:25:05.560Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java类的继承性">
-<meta name="twitter:description" content="继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作">
+<meta name="twitter:title" content="匿名内部类">
+<meta name="twitter:description" content="内部类： 在一个类的内部定义了另外一个类，利用内部类，可以实现私有属性的互相访问  匿名内部类： 没有名字的内部类，必须在抽象类和接口的基础上才可以定义">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://xxyxt.github.io/2019/01/15/Java类的继承性/">
+  <link rel="canonical" href="https://xxyxt.github.io/2019/01/18/匿名内部类/">
 
 
 
 
 
-  <title>Java类的继承性 | 下雪不下雨的个人博客</title>
+  <title>匿名内部类 | 下雪不下雨的个人博客</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/15/Java类的继承性/">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/18/匿名内部类/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xxyxt">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java类的继承性</h1>
+          <h1 class="post-title" itemprop="name headline">匿名内部类</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-15T09:56:27+08:00">
-                2019-01-15
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-18T14:09:06+08:00">
+                2019-01-18
               </time>
             
 
@@ -329,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
                   </a>
                 </span>
 
@@ -347,8 +347,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/15/Java类的继承性/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/15/Java类的继承性/" itemprop="commentsCount"></span>
+                <a href="/2019/01/18/匿名内部类/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/18/匿名内部类/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  273
+                  219
                 </span>
               
 
@@ -412,14 +412,18 @@
       
 
       
-        <p>继承性是面向对象的一个主要特征，主要解决了代码的重复利用的问题，利用继承性可以从已有的类中派生新的子类，也可以利用子类扩展出更多的操作<br><a id="more"></a><br>语法实现：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class 子类 extends 父类&#123;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>继承性的限制：<br>限制一：不可以多重继承，可以多层继承</p>
-<ul>
-<li>class A extends C,D    错误</li>
-<li>class A{}    class B extends A{}    class C extends B{}</li>
-<li>继承的层次不要过多<br>限制二：子类继承父类，会继承父类的全部操作，但是对于对于私有操作属于隐式继承，非私有操作属于显示继承<br>限制三：子类对象构造前，一定会默认调用<strong>父类的构造</strong>，父类对象先实例化，子类对象后实例化，所以子类对象相当于隐含了super()的 语句调用</li>
-<li>注：父类中提供无参构造时，是否编写super()没有区别，如果没有无参构造，则必须明确使用super()调用父类指定的构造方法</li>
+        <h3 id="内部类："><a href="#内部类：" class="headerlink" title="内部类："></a>内部类：</h3><ul>
+<li>在一个类的内部定义了另外一个类，利用内部类，可以实现私有属性的互相访问</li>
 </ul>
+<h3 id="匿名内部类："><a href="#匿名内部类：" class="headerlink" title="匿名内部类："></a>匿名内部类：</h3><ul>
+<li>没有名字的内部类，必须在抽象类和接口的基础上才可以定义</li>
+</ul>
+<a id="more"></a>
+<h3 id="解决的痛点："><a href="#解决的痛点：" class="headerlink" title="解决的痛点："></a>解决的痛点：</h3><ul>
+<li>如果定义的一个内部类只使用一次便不再使用了，那么就没有必要将其定义为一个具体的类，所以这时便需要一个使用完便不存在的内部类结构，匿名内部类就很好的解决了这个问题</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">interface Mesage&#123;</span><br><span class="line">	public void print();</span><br><span class="line">&#125;</span><br><span class="line">public class testDemo6 &#123;</span><br><span class="line">	public static void main(String args[]) &#123;</span><br><span class="line">		fun(new Mesage() &#123;</span><br><span class="line">			public void print() &#123;</span><br><span class="line">				System.out.println(&quot;Hello&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void fun(Mesage msg) &#123;</span><br><span class="line">		msg.print();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在调用fun()函数时直接实例化借口对象，同时覆写抽象方法。</p>
 
       
     </div>
@@ -483,8 +487,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/14/二叉树的几种遍历方法/" rel="next" title="二叉树的遍历">
-                <i class="fa fa-chevron-left"></i> 二叉树的遍历
+              <a href="/2019/01/17/Object/" rel="next" title="Object类">
+                <i class="fa fa-chevron-left"></i> Object类
               </a>
             
           </div>
@@ -492,10 +496,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/15/this-static关键字/" rel="prev" title="Java关键字">
-                Java关键字 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -580,8 +580,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -676,6 +685,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#内部类："><span class="nav-number">1.</span> <span class="nav-text">内部类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名内部类："><span class="nav-number">2.</span> <span class="nav-text">匿名内部类：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决的痛点："><span class="nav-number">3.</span> <span class="nav-text">解决的痛点：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
