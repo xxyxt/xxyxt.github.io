@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="经验,">
+  <meta name="keywords" content="Java,">
 
 
 
@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="安装pyinstaller报错：Python library not in binary dependencies运行环境Centos7.0Python3.6">
-<meta name="keywords" content="经验">
+<meta name="description" content="利用对象的多态性，可以解决方法参数统一的问题，但是随之而来的就是另外一个问题：并不是所有的向下转型都是安全的。从JDK 1.5开始提供了泛型技术，可以有效的解决这一问题">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安装pyinstaller报错">
-<meta property="og:url" content="https://xxyxt.github.io/2019/01/11/安装报错/index.html">
+<meta property="og:title" content="泛型">
+<meta property="og:url" content="https://xxyxt.github.io/2019/01/20/泛型/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="安装pyinstaller报错：Python library not in binary dependencies运行环境Centos7.0Python3.6">
+<meta property="og:description" content="利用对象的多态性，可以解决方法参数统一的问题，但是随之而来的就是另外一个问题：并不是所有的向下转型都是安全的。从JDK 1.5开始提供了泛型技术，可以有效的解决这一问题">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://img-blog.csdn.net/20180927004219612?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2019-01-11T02:35:45.535Z">
+<meta property="og:updated_time" content="2019-01-20T14:34:11.803Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安装pyinstaller报错">
-<meta name="twitter:description" content="安装pyinstaller报错：Python library not in binary dependencies运行环境Centos7.0Python3.6">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180927004219612?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="泛型">
+<meta name="twitter:description" content="利用对象的多态性，可以解决方法参数统一的问题，但是随之而来的就是另外一个问题：并不是所有的向下转型都是安全的。从JDK 1.5开始提供了泛型技术，可以有效的解决这一问题">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://xxyxt.github.io/2019/01/11/安装报错/">
+  <link rel="canonical" href="https://xxyxt.github.io/2019/01/20/泛型/">
 
 
 
 
 
-  <title>安装pyinstaller报错 | 下雪不下雨的个人博客</title>
+  <title>泛型 | 下雪不下雨的个人博客</title>
   
 
 
@@ -279,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/11/安装报错/">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/20/泛型/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xxyxt">
@@ -296,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">安装pyinstaller报错</h1>
+          <h1 class="post-title" itemprop="name headline">泛型</h1>
         
 
         <div class="post-meta">
@@ -308,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-11T10:28:47+08:00">
-                2019-01-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-20T22:15:06+08:00">
+                2019-01-20
               </time>
             
 
@@ -331,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -349,8 +347,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/11/安装报错/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/11/安装报错/" itemprop="commentsCount"></span>
+                <a href="/2019/01/20/泛型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/20/泛型/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -377,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  248
+                  446
                 </span>
               
 
@@ -414,32 +412,23 @@
       
 
       
-        <h2 id="安装pyinstaller报错：Python-library-not-in-binary-dependencies"><a href="#安装pyinstaller报错：Python-library-not-in-binary-dependencies" class="headerlink" title="安装pyinstaller报错：Python library not in binary dependencies"></a>安装pyinstaller报错：Python library not in binary dependencies</h2><h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>Centos7.0<br>Python3.6<br><a id="more"></a></p>
-<h2 id="pyinstaller安装"><a href="#pyinstaller安装" class="headerlink" title="pyinstaller安装"></a>pyinstaller安装</h2><p>照着网上的一些教程安装了pyinstaller</p>
-<pre><code>pip3 installer pyinstaller
-</code></pre><p>   将pyinstaller的路径添加到环境变量</p>
-<pre><code>export PATH=$PATH:/usr/local/python3/lib/python3.6/site-packages
-</code></pre><p>修改配置文件，将上一条命令写入  /etc/profile 文件</p>
-<pre><code>vi /etc/profile
-</code></pre><p>然后装完之后开始使用，试着打包自己刚刚写的一个py文件</p>
-<pre><code>pyinstaller ex14.py
-</code></pre><p>然后就开始报错</p>
-<pre><code>[root@VM_0_13_centos python_ex]# pyinstaller -F ex41.py
-OSError: Python library not found: libpython3.6mu.so.1.0, libpython3.6.so.1.0, libpython3.6m.so.1.0
-This would mean your Python installation doesn&apos;t come with proper library files.
-This usually happens by missing development package, or unsuitable build parameters of Python installation.
-
-On Debian/Ubuntu, you would need to install Python development packages
-  * apt-get install python3-dev
-  * apt-get install python-dev
-  *  If you&apos;re building Python by yourself, please rebuild your Python with `--enable-shared` (or, `--enable-framework` on Darwin)
-</code></pre><p>解决办法<br>1打开  /etc/ld.so.conf 写入<br>/usr/local/lib64<br>/usr/local/lib</p>
-<pre><code>vi /etc/ld.so.conf
-</code></pre><p>2</p>
-<pre><code>ldconfig
-</code></pre><p>3</p>
-<pre><code>pyinstaller ex14.py
-</code></pre><p>这样就解决问题了<br><img src="https://img-blog.csdn.net/20180927004219612?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+        <p>利用对象的多态性，可以解决方法参数统一的问题，但是随之而来的就是另外一个问题：并不是所有的向下转型都是安全的。从JDK 1.5开始提供了泛型技术，可以有效的解决这一问题</p>
+<a id="more"></a>
+<p>如果要开发一套地理信息系统，必定存在描述精度和纬度的数据，可以有三种数据类型：</p>
+<ul>
+<li>整型</li>
+<li>浮点型</li>
+<li>字符串</li>
+</ul>
+<p>相应的，如果要统一参数类型，就会存在三种转型关系：</p>
+<ul>
+<li>int型自动封装成Integer，向上转型为Object,Object向下转型为Integer，Integer拆封成int</li>
+<li>double-&gt;Double&gt;Objec, Object-&gt;Double-&gt;double-</li>
+<li>String-&gt;Object,Object-&gt;String</li>
+</ul>
+<p>代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span>&lt;T&gt;&#123;</span></span><br><span class="line">	<span class="keyword">private</span> T x;</span><br><span class="line">	<span class="keyword">private</span> T y;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setX</span><span class="params">(T x)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.x=x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setY</span><span class="params">(T y)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.y=y;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> T <span class="title">getX</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> T <span class="title">getY</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> y;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testDemo7</span> &#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">		<span class="comment">//引用类型是字符型</span></span><br><span class="line">		Point&lt;String&gt; p=<span class="keyword">new</span> Point&lt;&gt;();</span><br><span class="line">		p.setX(<span class="string">"东经 120"</span>);</span><br><span class="line">		p.setY(<span class="string">"北纬 50"</span>);</span><br><span class="line">		String x=p.getX();   <span class="comment">//自动拆箱</span></span><br><span class="line">		String y=p.getY();   <span class="comment">//自动拆箱</span></span><br><span class="line">		System.out.println(<span class="string">"经度："</span>+x+<span class="string">",维度："</span>+y);</span><br><span class="line">		<span class="comment">//引用类型是整型</span></span><br><span class="line">		Point&lt;Integer&gt; p1=<span class="keyword">new</span> Point&lt;&gt;();</span><br><span class="line">		p1.setX(<span class="number">120</span>);</span><br><span class="line">		p1.setY(<span class="number">50</span>);</span><br><span class="line">		<span class="keyword">int</span> x1=p1.getX();    <span class="comment">//自动拆箱</span></span><br><span class="line">		<span class="keyword">int</span> y1=p1.getY();    <span class="comment">//自动拆箱</span></span><br><span class="line">		System.out.println(<span class="string">"经度："</span>+x1+<span class="string">",维度："</span>+y1);</span><br><span class="line">		<span class="comment">//引用类型是浮点型</span></span><br><span class="line">		Point&lt;Double&gt; p2=<span class="keyword">new</span> Point&lt;&gt;();</span><br><span class="line">		p2.setX(<span class="number">120.5</span>);</span><br><span class="line">		p2.setY(<span class="number">50.0</span>);</span><br><span class="line">		<span class="keyword">double</span> x2=p2.getX();  <span class="comment">//自动拆箱</span></span><br><span class="line">		<span class="keyword">double</span> y2=p2.getY();  <span class="comment">//自动拆箱</span></span><br><span class="line">		System.out.println(<span class="string">"经度："</span>+x2+<span class="string">",维度："</span>+y2);			</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用泛型后，类中的属性都是动态设置的，从而避免了向下转型的不安全性。<br>能够采用泛型的只能够是引用类型，不能是基本类型</p>
 
       
     </div>
@@ -490,7 +479,7 @@ On Debian/Ubuntu, you would need to install Python development packages
       
         <div class="post-tags">
           
-            <a href="/tags/经验/" rel="tag"># 经验</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -503,8 +492,8 @@ On Debian/Ubuntu, you would need to install Python development packages
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/08/使用Github-Hexo搭建自己的博客/" rel="next" title="使用Github+Hexo搭建自己的博客">
-                <i class="fa fa-chevron-left"></i> 使用Github+Hexo搭建自己的博客
+              <a href="/2019/01/20/foreach循环/" rel="next" title="foreach循环">
+                <i class="fa fa-chevron-left"></i> foreach循环
               </a>
             
           </div>
@@ -513,8 +502,8 @@ On Debian/Ubuntu, you would need to install Python development packages
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/11/01背包问题/" rel="prev" title="01背包问题">
-                01背包问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/20/通配符/" rel="prev" title="通配符">
+                通配符 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -600,17 +589,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -705,22 +685,6 @@ var jiathis_config={
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装pyinstaller报错：Python-library-not-in-binary-dependencies"><span class="nav-number">1.</span> <span class="nav-text">安装pyinstaller报错：Python library not in binary dependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行环境"><span class="nav-number">2.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyinstaller安装"><span class="nav-number">3.</span> <span class="nav-text">pyinstaller安装</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       

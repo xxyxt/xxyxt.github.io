@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="经验,">
+  <meta name="keywords" content="Java,">
 
 
 
@@ -81,20 +81,18 @@
 
 
 
-<meta name="description" content="安装pyinstaller报错：Python library not in binary dependencies运行环境Centos7.0Python3.6">
-<meta name="keywords" content="经验">
+<meta name="description" content="在调用方法时，必须按照方法定义的变量进行参数传递，但是当参数个数不确定时，就无法准确的进行方法的调用，最初的解决方法是将参数包装成一个数组,代码如下：">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="安装pyinstaller报错">
-<meta property="og:url" content="https://xxyxt.github.io/2019/01/11/安装报错/index.html">
+<meta property="og:title" content="可变参数">
+<meta property="og:url" content="https://xxyxt.github.io/2019/01/20/可变参数/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="安装pyinstaller报错：Python library not in binary dependencies运行环境Centos7.0Python3.6">
+<meta property="og:description" content="在调用方法时，必须按照方法定义的变量进行参数传递，但是当参数个数不确定时，就无法准确的进行方法的调用，最初的解决方法是将参数包装成一个数组,代码如下：">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://img-blog.csdn.net/20180927004219612?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2019-01-11T02:35:45.535Z">
+<meta property="og:updated_time" content="2019-01-20T13:51:50.243Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="安装pyinstaller报错">
-<meta name="twitter:description" content="安装pyinstaller报错：Python library not in binary dependencies运行环境Centos7.0Python3.6">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180927004219612?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="可变参数">
+<meta name="twitter:description" content="在调用方法时，必须按照方法定义的变量进行参数传递，但是当参数个数不确定时，就无法准确的进行方法的调用，最初的解决方法是将参数包装成一个数组,代码如下：">
 
 
 
@@ -124,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://xxyxt.github.io/2019/01/11/安装报错/">
+  <link rel="canonical" href="https://xxyxt.github.io/2019/01/20/可变参数/">
 
 
 
 
 
-  <title>安装pyinstaller报错 | 下雪不下雨的个人博客</title>
+  <title>可变参数 | 下雪不下雨的个人博客</title>
   
 
 
@@ -279,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/11/安装报错/">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/20/可变参数/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xxyxt">
@@ -296,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">安装pyinstaller报错</h1>
+          <h1 class="post-title" itemprop="name headline">可变参数</h1>
         
 
         <div class="post-meta">
@@ -308,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-11T10:28:47+08:00">
-                2019-01-11
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-20T21:45:05+08:00">
+                2019-01-20
               </time>
             
 
@@ -331,8 +329,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/python/" itemprop="url" rel="index">
-                    <span itemprop="name">python</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -349,8 +347,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/11/安装报错/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/11/安装报错/" itemprop="commentsCount"></span>
+                <a href="/2019/01/20/可变参数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/20/可变参数/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -377,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  248
+                  315
                 </span>
               
 
@@ -414,32 +412,12 @@
       
 
       
-        <h2 id="安装pyinstaller报错：Python-library-not-in-binary-dependencies"><a href="#安装pyinstaller报错：Python-library-not-in-binary-dependencies" class="headerlink" title="安装pyinstaller报错：Python library not in binary dependencies"></a>安装pyinstaller报错：Python library not in binary dependencies</h2><h2 id="运行环境"><a href="#运行环境" class="headerlink" title="运行环境"></a>运行环境</h2><p>Centos7.0<br>Python3.6<br><a id="more"></a></p>
-<h2 id="pyinstaller安装"><a href="#pyinstaller安装" class="headerlink" title="pyinstaller安装"></a>pyinstaller安装</h2><p>照着网上的一些教程安装了pyinstaller</p>
-<pre><code>pip3 installer pyinstaller
-</code></pre><p>   将pyinstaller的路径添加到环境变量</p>
-<pre><code>export PATH=$PATH:/usr/local/python3/lib/python3.6/site-packages
-</code></pre><p>修改配置文件，将上一条命令写入  /etc/profile 文件</p>
-<pre><code>vi /etc/profile
-</code></pre><p>然后装完之后开始使用，试着打包自己刚刚写的一个py文件</p>
-<pre><code>pyinstaller ex14.py
-</code></pre><p>然后就开始报错</p>
-<pre><code>[root@VM_0_13_centos python_ex]# pyinstaller -F ex41.py
-OSError: Python library not found: libpython3.6mu.so.1.0, libpython3.6.so.1.0, libpython3.6m.so.1.0
-This would mean your Python installation doesn&apos;t come with proper library files.
-This usually happens by missing development package, or unsuitable build parameters of Python installation.
-
-On Debian/Ubuntu, you would need to install Python development packages
-  * apt-get install python3-dev
-  * apt-get install python-dev
-  *  If you&apos;re building Python by yourself, please rebuild your Python with `--enable-shared` (or, `--enable-framework` on Darwin)
-</code></pre><p>解决办法<br>1打开  /etc/ld.so.conf 写入<br>/usr/local/lib64<br>/usr/local/lib</p>
-<pre><code>vi /etc/ld.so.conf
-</code></pre><p>2</p>
-<pre><code>ldconfig
-</code></pre><p>3</p>
-<pre><code>pyinstaller ex14.py
-</code></pre><p>这样就解决问题了<br><img src="https://img-blog.csdn.net/20180927004219612?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt="在这里插入图片描述"></p>
+        <p>在调用方法时，必须按照方法定义的变量进行参数传递，但是当参数个数不确定时，就无法准确的进行方法的调用，最初的解决方法是将参数包装成一个数组,代码如下：</p>
+<a id="more"></a>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">testDeno6</span> &#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span> &#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="keyword">add</span>(<span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;));</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="keyword">add</span>(<span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>,<span class="number">2</span>&#125;));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">add</span>(<span class="params"><span class="keyword">int</span>[] data</span>)</span> &#123;</span><br><span class="line">		<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>;x&lt;data.length;x++) &#123;</span><br><span class="line">			sum+=data[x];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> sum;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了解决这个问题，从JDK 1.5开始，在方法定义上提供了可变参数的概念，开发者可以使用<strong>参数类型…变量</strong>的形式传递若干参数，着多个变量，将以指定类型的数组进行保存，代码如下：</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">testDeno6</span> &#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span> &#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="keyword">add</span>(<span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;));</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="keyword">add</span>(<span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>,<span class="number">2</span>&#125;));</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="keyword">add</span>(<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>));</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="keyword">add</span>(<span class="number">1</span>,<span class="number">2</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">add</span>(<span class="params"><span class="keyword">int</span>...data</span>)</span> &#123;</span><br><span class="line">		<span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>;x&lt;data.length;x++) &#123;</span><br><span class="line">			sum+=data[x];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> sum;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看出，即使用了可变参数定义了方法，也可以接收数组，也可以直接传递任意多个参数</p>
 
       
     </div>
@@ -490,7 +468,7 @@ On Debian/Ubuntu, you would need to install Python development packages
       
         <div class="post-tags">
           
-            <a href="/tags/经验/" rel="tag"># 经验</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -503,8 +481,8 @@ On Debian/Ubuntu, you would need to install Python development packages
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/08/使用Github-Hexo搭建自己的博客/" rel="next" title="使用Github+Hexo搭建自己的博客">
-                <i class="fa fa-chevron-left"></i> 使用Github+Hexo搭建自己的博客
+              <a href="/2019/01/20/java-programmer-need-know/" rel="next" title="JavaInterviewGithub">
+                <i class="fa fa-chevron-left"></i> JavaInterviewGithub
               </a>
             
           </div>
@@ -513,8 +491,8 @@ On Debian/Ubuntu, you would need to install Python development packages
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/01/11/01背包问题/" rel="prev" title="01背包问题">
-                01背包问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/20/foreach循环/" rel="prev" title="foreach循环">
+                foreach循环 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -600,17 +578,8 @@ var jiathis_config={
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -705,22 +674,6 @@ var jiathis_config={
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装pyinstaller报错：Python-library-not-in-binary-dependencies"><span class="nav-number">1.</span> <span class="nav-text">安装pyinstaller报错：Python library not in binary dependencies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行环境"><span class="nav-number">2.</span> <span class="nav-text">运行环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pyinstaller安装"><span class="nav-number">3.</span> <span class="nav-text">pyinstaller安装</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
