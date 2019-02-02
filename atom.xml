@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xxyxt.github.io/"/>
-  <updated>2019-02-02T14:10:22.353Z</updated>
+  <updated>2019-02-02T15:03:38.476Z</updated>
   <id>https://xxyxt.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>内建函数式接口</title>
+    <link href="https://xxyxt.github.io/2019/02/02/%E5%86%85%E5%BB%BA%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3/"/>
+    <id>https://xxyxt.github.io/2019/02/02/内建函数式接口/</id>
+    <published>2019-02-02T14:43:02.451Z</published>
+    <updated>2019-02-02T15:03:38.476Z</updated>
+    
+    <content type="html"><![CDATA[<p>从JDK 1.8开始提供了一个新的开发包：java.util.function，并在这个包中提供了4个核心的函数式接口<br><a id="more"></a></p><ol><li><p>功能型接口(Function)</p><ul><li><p>接口定义如下 </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Function</span>&lt;<span class="title">T</span>,<span class="title">R</span>&gt;</span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> R <span class="title">apply</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>主要作用：此接口需要接收一个参数，并且返回一个处理结果</p></li></ul></li></ol><ol start="2"><li><p>消费型接口(Consumer)</p><ul><li><p>接口定义如下 </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Consumer</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accept</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>主要作用：此接口需要接收一个参数，不返回处理结果</p></li></ul></li><li><p>供给型接口(Supplier)</p><ul><li><p>接口定义如下 </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Supplier</span>&lt;<span class="title">T</span>,<span class="title">R</span>&gt;</span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>主要作用：此接不接收参数，可以返回处理结果</p></li></ul></li><li><p>断言型接口(Predicate)</p><ul><li><p>接口定义如下 </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Predicate</span>&lt;<span class="title">T</span>&gt;</span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">test</span><span class="params">(T t)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>主要作用：进行判断操作</p></li></ul></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;从JDK 1.8开始提供了一个新的开发包：java.util.function，并在这个包中提供了4个核心的函数式接口&lt;br&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://xxyxt.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="Java" scheme="https://xxyxt.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>比较器：Comparable</title>
@@ -472,28 +494,6 @@
     </summary>
     
       <category term="博客" scheme="https://xxyxt.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
-    
-    
-      <category term="动态规划" scheme="https://xxyxt.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>01背包问题</title>
-    <link href="https://xxyxt.github.io/2019/01/11/01%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/"/>
-    <id>https://xxyxt.github.io/2019/01/11/01背包问题/</id>
-    <published>2019-01-11T05:34:52.000Z</published>
-    <updated>2019-01-11T12:26:57.092Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="01背包问题"><a href="#01背包问题" class="headerlink" title="01背包问题"></a>01背包问题</h2><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>问题：有n件物品，每件物品重量为w[ i ]，价值为c[ i ]。现有一个容量为V的背包，问如何选取物品放入背包，使背包总价值最大，其中每个物品只有一件。<br><a id="more"></a><br>样例：<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n=<span class="number">5</span> V=<span class="number">8</span></span><br><span class="line"><span class="number">3</span> <span class="number">5</span> <span class="number">1</span> <span class="number">2</span> <span class="number">2</span> <span class="comment">// w[ i ]</span></span><br><span class="line"><span class="number">4</span> <span class="number">5</span> <span class="number">2</span> <span class="number">1</span> <span class="number">3</span> / / c[ i ]</span><br></pre></td></tr></table></figure></p><p>显然，对于每件物品有两种选择，暴力解法复杂度为O($2^n$)<br>用dp[i][v]表示第i件物品放入容量为v的背包，则dp[i][v]的值求解有两种选择：</p><ol><li>不放入第i件物品，那么问题转化为前i-1件物品放入容量为v的背包获得的最大价值，dp[ i-1 ][ v ]</li><li>放入第i件物品，那么问题转化为前i-1件物品放入容量为v-w[i]的背包获得的最大价值<br>dp[ i-1][ v-w[ i ] ]+c[ i ]</li></ol><p><strong>公式为</strong>：dp[ i ][ v ] = max{ dp[ i-1 ][ v ], dp[ i-1 ][ v - w[ i ] ] + c[ i ] }<br>第i件物品的状态，只与第i-1件物品的状态有关，所以可以通过边界dp[0][v]=0(0&lt;=v&lt;=V)，递推得到整个数组</p><h4 id="二维数组实现代码："><a href="#二维数组实现代码：" class="headerlink" title="二维数组实现代码："></a>二维数组实现代码：</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(int <span class="built_in">i</span>=<span class="number">1</span>;<span class="built_in">i</span>&lt;=n;<span class="built_in">i</span>++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(int v=w[<span class="built_in">i</span>];w[<span class="built_in">i</span>]&lt;V;v++)</span><br><span class="line">&#123;</span><br><span class="line">dp[<span class="built_in">i</span>][v]=<span class="built_in">max</span>(dp[<span class="built_in">i</span><span class="number">-1</span>][v],dp[<span class="built_in">i</span><span class="number">-1</span>][v-w[<span class="built_in">i</span>]]+c[<span class="built_in">i</span>])</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>这样计算得出的dp[ n ][ V ]的值即为最大值</strong><br>其实上面的代码还可以在空间复杂度上进行优化，可以看出，在计算dp[i+1][v]的值时，dp[i-1][v]的值没有用到，因此不妨直接用一维数组来代替二维数组，枚举方向从1到n,v从V到0，状态转移方程变为：<br><figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp<span class="comment">[ v ]</span> = max(dp<span class="comment">[ v ]</span>,dp<span class="comment">[ v-w<span class="comment">[ i ]</span>]</span>+c<span class="comment">[ i ]</span>)</span><br></pre></td></tr></table></figure></p><h4 id="一维数组实现代码："><a href="#一维数组实现代码：" class="headerlink" title="一维数组实现代码："></a>一维数组实现代码：</h4><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(int <span class="built_in">i</span> = <span class="number">1</span>;<span class="built_in">i</span> &lt;= n; <span class="built_in">i</span>++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">for</span>(int v = V; v&gt;=w [ <span class="built_in">i</span> ]; v--)</span><br><span class="line">&#123;</span><br><span class="line">dp[ v ] = <span class="built_in">max</span>(dp[ v ], dp[ v - w[ <span class="built_in">i</span> ]] + c[ <span class="built_in">i</span> ]</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>这样得到的最大值，需要在数组dp里面找出最大值，不是dp[ V ]</strong></p><h2 id="操作实例"><a href="#操作实例" class="headerlink" title="操作实例"></a>操作实例</h2><p><a href="https://www.nowcoder.com/practice/f9c6f980eeec43ef85be20755ddbeaf4?tpId=37&amp;tqId=21239&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking" target="_blank" rel="noopener">https://www.nowcoder.com/practice/f9c6f980eeec43ef85be20755ddbeaf4?tpId=37&amp;tqId=21239&amp;tPage=1&amp;rp=&amp;ru=/ta/huawei&amp;qru=/ta/huawei/question-ranking</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;01背包问题&quot;&gt;&lt;a href=&quot;#01背包问题&quot; class=&quot;headerlink&quot; title=&quot;01背包问题&quot;&gt;&lt;/a&gt;01背包问题&lt;/h2&gt;&lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;问题：有n件物品，每件物品重量为w[ i ]，价值为c[ i ]。现有一个容量为V的背包，问如何选取物品放入背包，使背包总价值最大，其中每个物品只有一件。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://xxyxt.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
       <category term="动态规划" scheme="https://xxyxt.github.io/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
