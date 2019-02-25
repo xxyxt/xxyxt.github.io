@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="泛型技术解决了向下转型的安全性问题，随之而来，又会产生一个新的问题：如果泛型类设置的不同，方法里面的参数引用也必定是不同的，为了解决这个问题，引入了通配符的使用">
+<meta name="description" content="所有的IO操作都在java.io包中进行定义，一共包含5个类和一个接口：  五个类：File、InputStream、OutputStream、Reader、Writer 一个接口：Serializable">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通配符">
-<meta property="og:url" content="https://xxyxt.github.io/2019/01/20/通配符/index.html">
+<meta property="og:title" content="IO编程">
+<meta property="og:url" content="https://xxyxt.github.io/2019/02/25/Java-IO编程/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="泛型技术解决了向下转型的安全性问题，随之而来，又会产生一个新的问题：如果泛型类设置的不同，方法里面的参数引用也必定是不同的，为了解决这个问题，引入了通配符的使用">
+<meta property="og:description" content="所有的IO操作都在java.io包中进行定义，一共包含5个类和一个接口：  五个类：File、InputStream、OutputStream、Reader、Writer 一个接口：Serializable">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-20T14:58:26.499Z">
+<meta property="og:updated_time" content="2019-02-25T03:46:34.906Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="通配符">
-<meta name="twitter:description" content="泛型技术解决了向下转型的安全性问题，随之而来，又会产生一个新的问题：如果泛型类设置的不同，方法里面的参数引用也必定是不同的，为了解决这个问题，引入了通配符的使用">
+<meta name="twitter:title" content="IO编程">
+<meta name="twitter:description" content="所有的IO操作都在java.io包中进行定义，一共包含5个类和一个接口：  五个类：File、InputStream、OutputStream、Reader、Writer 一个接口：Serializable">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://xxyxt.github.io/2019/01/20/通配符/">
+  <link rel="canonical" href="https://xxyxt.github.io/2019/02/25/Java-IO编程/">
 
 
 
 
 
-  <title>通配符 | 下雪不下雨的个人博客</title>
+  <title>IO编程 | 下雪不下雨的个人博客</title>
   
 
 
@@ -277,7 +277,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/20/通配符/">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/02/25/Java-IO编程/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="xxyxt">
@@ -294,7 +294,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">通配符</h1>
+          <h1 class="post-title" itemprop="name headline">IO编程</h1>
         
 
         <div class="post-meta">
@@ -306,8 +306,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-20T22:37:15+08:00">
-                2019-01-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-25T10:33:25+08:00">
+                2019-02-25
               </time>
             
 
@@ -347,8 +347,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/01/20/通配符/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/01/20/通配符/" itemprop="commentsCount"></span>
+                <a href="/2019/02/25/Java-IO编程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/02/25/Java-IO编程/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -375,7 +375,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  369
+                  1.1k
                 </span>
               
 
@@ -391,7 +391,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  1
+                  4
                 </span>
               
             </div>
@@ -412,21 +412,76 @@
       
 
       
-        <p>泛型技术解决了向下转型的安全性问题，随之而来，又会产生一个新的问题：如果泛型类设置的不同，方法里面的参数引用也必定是不同的，为了解决这个问题，引入了通配符的使用</p>
-<a id="more"></a>
-<p>如果没有通配符，在泛型方法里面定义多个泛型类</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span>&lt;<span class="type">T</span>&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> T msg;</span><br><span class="line">	<span class="keyword">public</span> void setMsg(msg) &#123;</span><br><span class="line">		<span class="keyword">this</span>.msg=msg;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> T getMsg() &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.msg;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testDemo7</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> static void main(String args[]) &#123;</span><br><span class="line">		Message&lt;String&gt; m=new Message&lt;&gt;();</span><br><span class="line">		m.<span class="keyword">set</span>(<span class="string">"Hello"</span>);</span><br><span class="line">		Message&lt;Integer&gt; n=new Message&lt;&gt;();</span><br><span class="line">		n.<span class="keyword">set</span>(<span class="number">19</span>);</span><br><span class="line">		fu(m);</span><br><span class="line">		<span class="function"><span class="title">fun</span><span class="params">(n)</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> static void <span class="function"><span class="title">fun</span><span class="params">(Message&lt;String&gt; m)</span></span> &#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(m.getMsg());</span><br><span class="line">		ystem.<span class="keyword">out</span>.println(n.getMsg());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这样程序显然会报错</p>
-<p>可以使用通配符”?”解决参数的传递问题，代码如下：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Message</span>&lt;<span class="type">T</span>&gt;</span>&#123;</span><br><span class="line">	<span class="keyword">private</span> T msg;</span><br><span class="line">	<span class="keyword">public</span> void setMsg(T msg) &#123;</span><br><span class="line">		<span class="keyword">this</span>.msg=msg;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> T getMsg() &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">this</span>.msg;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testDemo7</span></span>&#123;</span><br><span class="line">	<span class="keyword">public</span> static void main(String args[]) &#123;</span><br><span class="line">		Message&lt;String&gt; m=new Message&lt;&gt;();</span><br><span class="line">		m.setMsg(<span class="string">"Hello"</span>);</span><br><span class="line">		Message&lt;Integer&gt; n=new Message&lt;&gt;();</span><br><span class="line">		n.setMsg(<span class="number">19</span>);</span><br><span class="line">		<span class="function"><span class="title">fun</span><span class="params">(m)</span></span>;</span><br><span class="line">		<span class="function"><span class="title">fun</span><span class="params">(n)</span></span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> static void <span class="function"><span class="title">fun</span><span class="params">(Message&lt;?&gt; m)</span></span> &#123;</span><br><span class="line">		System.<span class="keyword">out</span>.println(m.getMsg());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>使用通配符”?”，不管何种泛型类型，fun方法对抗与接收参数</strong></p>
-<p>在”?”通配符的基础上还有两个子通配符：</p>
+        <p>所有的IO操作都在java.io包中进行定义，一共包含5个类和一个接口：</p>
 <ul>
-<li><p>“？ extends 类”，eg:？ extends Number: 意味着可以设置Number或者Number的子类</p>
-</li>
-<li><p>“？ super 类”，eg：? super String: 只能设置String和他的父类Object</p>
-</li>
+<li>五个类：File、InputStream、OutputStream、Reader、Writer</li>
+<li>一个接口：Serializable</li>
 </ul>
+<a id="more"></a>
+<h2 id="文件操作类：File"><a href="#文件操作类：File" class="headerlink" title="文件操作类：File"></a>文件操作类：File</h2><h3 id="File类常用方法"><a href="#File类常用方法" class="headerlink" title="File类常用方法"></a>File类常用方法</h3><ul>
+<li>public File(String pathname) 构造方法 传递完整的文件操作路径</li>
+<li>public File(File parent,String child) 构造方法 设置父路径和子文件路径</li>
+<li>public boolean creatNewFile() throws IOException 普通 创建新文件</li>
+<li>public boolean exists() 普通方法 判断给定的路径是否存在</li>
+<li>pblic boolean delete() 普通方法 删除指定路径的文件</li>
+<li>public File getParentFile() 普通方法 取得当前路径的父路径</li>
+<li>public boolean mkdirs() 普通方法 创建多级目录</li>
+<li>public long length() 普通方法 取得文件大小，以字节为单位返回</li>
+<li>public boolean isFile() 普通方法 判断给定路径是否是文件</li>
+<li>public boolean isDirectory() 普通方法 判断给定路径是否是目录</li>
+<li>public long lastModified() 普通方法 取得最后一次修改日期时间</li>
+<li>public String[] list() 普通方法 取得指定目录的所有内容</li>
+<li>public File[] listFiles() 普通方法 列出所有路径以File类包含</li>
+</ul>
+<h2 id="字节输出流：OutputStream"><a href="#字节输出流：OutputStream" class="headerlink" title="字节输出流：OutputStream"></a>字节输出流：OutputStream</h2><p><strong>定义：</strong>public abstract class OutputStream extends Object implements Closeable,Flushable</p>
+<h3 id="OutputStream类常用方法"><a href="#OutputStream类常用方法" class="headerlink" title="OutputStream类常用方法"></a>OutputStream类常用方法</h3><ul>
+<li>public void close() throws IOException 普通方法 关闭字节输出流</li>
+<li>public void flush() throws IOException 普通方法 强制刷新</li>
+<li>public abstract void write(int b) throws IOException 普通方法 输出单个字节</li>
+<li>public void write(byte[] b) throws IOException 普通方法 输出全部字节数组数据</li>
+<li>public void write(byte[] b，int off,int len) throws IOException 普通方法 输出部分字节数组数据</li>
+</ul>
+<p>OutputStream是一个抽象类,需要使用FileOutputStream子类完成操作</p>
+<h3 id="FileOutputStream常用方法"><a href="#FileOutputStream常用方法" class="headerlink" title="FileOutputStream常用方法"></a>FileOutputStream常用方法</h3><ul>
+<li>public FileOutputStream(File file) throws FileNotFoundException 构造方法 将内容输出到指定路径，如果文件存在，则覆盖</li>
+<li>public FileOutputStream(File file，boolean append) throws FileNotFoundException 构造方法 布尔参数设置为true，则表示追加</li>
+</ul>
+<h2 id="字节输入流：InputStream"><a href="#字节输入流：InputStream" class="headerlink" title="字节输入流：InputStream"></a>字节输入流：InputStream</h2><p><strong>定义：</strong>public abstract class OutputStream extends Object implements Closeable</p>
+<h3 id="InputStream类常用方法"><a href="#InputStream类常用方法" class="headerlink" title="InputStream类常用方法"></a>InputStream类常用方法</h3><ul>
+<li>public void close() throws IOException 普通方法 关闭字节输入流</li>
+<li>public abstract int read() throws IOException 普通方法 读取单个字节</li>
+<li>public int read(byte[] b) throws IOException 普通方法 将数据读取到字节数组中，同时返回读取长度</li>
+<li>public int read(byte[] b，int off,int len) throws IOException 普通方法 将数据读取到部分字节数组中，同时返回读取长度</li>
+</ul>
+<p>InputStream是一个抽象类,需要使用FileInputStream子类完成操作</p>
+<h3 id="FileInputStream常用方法"><a href="#FileInputStream常用方法" class="headerlink" title="FileInputStream常用方法"></a>FileInputStream常用方法</h3><ul>
+<li>public FileInputStream(File file) throws FileNotFoundException 构造方法 设置要读取文件的路径</li>
+</ul>
+<h2 id="字符输出流：Writer"><a href="#字符输出流：Writer" class="headerlink" title="字符输出流：Writer"></a>字符输出流：Writer</h2><p><strong>定义：</strong>public abstract class Writer extends Object implements Appendable,Closeable,Flushable</p>
+<p>利用Writer类可以实现字符数组(包含字符串)的输出</p>
+<h3 id="Writer类常用方法"><a href="#Writer类常用方法" class="headerlink" title="Writer类常用方法"></a>Writer类常用方法</h3><ul>
+<li>public void close() throws IOException 普通方法 关闭字节输出流</li>
+<li>public void flush() throws IOException 普通方法 强制刷新</li>
+<li>public Writer append(CharSequence csq) throws IOException 普通方法 追加数据</li>
+<li>public void write(String str) throws IOException 普通方法 输出字符串数据</li>
+<li>public void write(char[] cbuf) throws IOException 普通方法 输出字符数组数据</li>
+</ul>
+<p>Writer是一个抽象类,需要使用FileWriter子类完成操作</p>
+<h3 id="FileWriter常用方法"><a href="#FileWriter常用方法" class="headerlink" title="FileWriter常用方法"></a>FileWriter常用方法</h3><ul>
+<li>public FileWriter(File file) throws FileNotFoundException 构造方法 设置输出文件</li>
+<li>public FileWriter(File file，boolean append) throws FileNotFoundException 构造方法 设置输出文件是否以追加方式进行数据追加</li>
+</ul>
+<h2 id="字符输出流：Reader"><a href="#字符输出流：Reader" class="headerlink" title="字符输出流：Reader"></a>字符输出流：Reader</h2><p><strong>定义：</strong>public abstract class Reader extends Object implements Readable,Closeable</p>
+<h3 id="Reader类常用方法"><a href="#Reader类常用方法" class="headerlink" title="Reader类常用方法"></a>Reader类常用方法</h3><ul>
+<li>public void close() throws IOException 普通方法 关闭字节输入流</li>
+<li>public int read() throws IOException 普通方法 读取单个数据</li>
+<li>public int read(char[] cbuf) throws IOException 普通方法 读取数据到字符数组，返回读取长度</li>
+</ul>
+<p>Reader是一个抽象类,需要使用FileReader子类完成操作</p>
+<h3 id="FileWriter常用方法-1"><a href="#FileWriter常用方法-1" class="headerlink" title="FileWriter常用方法"></a>FileWriter常用方法</h3><ul>
+<li>publicFileReader(File file) throws FileNotFoundException 构造方法 设置要读取的文件路径</li>
+</ul>
+<h2 id="案例：文件复制"><a href="#案例：文件复制" class="headerlink" title="案例：文件复制"></a>案例：文件复制</h2><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">package Test;</span><br><span class="line"><span class="keyword">import</span> java.io.<span class="built_in">File</span>;</span><br><span class="line"><span class="keyword">import</span> java.io.InputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.OutputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileInputStream;</span><br><span class="line"><span class="keyword">import</span> java.io.FileOutputStream;</span><br><span class="line"><span class="keyword">public</span> class testDemo13 &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span> args[]) throws Exception&#123;</span><br><span class="line">		<span class="keyword">long</span> star=System.currentTimeMillis();</span><br><span class="line">		<span class="built_in">if</span>(args.length!=<span class="number">2</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.<span class="built_in">println</span>(<span class="string">"参数输入错误"</span>);</span><br><span class="line">			System.exit(<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">File</span> filein=<span class="keyword">new</span> <span class="built_in">File</span>(args[<span class="number">0</span>]);</span><br><span class="line">		<span class="built_in">if</span>(!filein.<span class="built_in">exists</span>())</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.<span class="built_in">println</span>(<span class="string">"原文件不存在"</span>);</span><br><span class="line">			System.exit(<span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">File</span> fileout=<span class="keyword">new</span> <span class="built_in">File</span>(args[<span class="number">1</span>]);</span><br><span class="line">		<span class="built_in">if</span>(!fileout.getParentFile().<span class="built_in">exists</span>())</span><br><span class="line">		&#123;</span><br><span class="line">			fileout.getParentFile().mkdirs();</span><br><span class="line">		&#125;</span><br><span class="line">		InputStream input=<span class="keyword">new</span> FileInputStream(filein);</span><br><span class="line">		OutputStream output=<span class="keyword">new</span> FileOutputStream(fileout);</span><br><span class="line">		<span class="keyword">int</span> temp=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">byte</span> data[]=<span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">		<span class="built_in">while</span>((temp=input.<span class="built_in">read</span>(data))!=<span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			output.<span class="built_in">write</span>(data,<span class="number">0</span>,temp);</span><br><span class="line">		&#125;</span><br><span class="line">		input.<span class="built_in">close</span>();</span><br><span class="line">		output.<span class="built_in">close</span>();</span><br><span class="line">		<span class="keyword">long</span> <span class="built_in">end</span>=System.currentTimeMillis();</span><br><span class="line">		System.out.<span class="built_in">println</span>(<span class="string">"复制所花费的时间:"</span>+(<span class="built_in">end</span>-star));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -490,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/20/泛型/" rel="next" title="泛型">
-                <i class="fa fa-chevron-left"></i> 泛型
+              <a href="/2019/02/08/正则表达式/" rel="next" title="正则表达式">
+                <i class="fa fa-chevron-left"></i> 正则表达式
               </a>
             
           </div>
@@ -499,10 +554,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/21/单例设计模式/" rel="prev" title="单例设计模式">
-                单例设计模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -587,8 +638,17 @@ var jiathis_config={
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -683,6 +743,22 @@ var jiathis_config={
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件操作类：File"><span class="nav-number">1.</span> <span class="nav-text">文件操作类：File</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#File类常用方法"><span class="nav-number">1.1.</span> <span class="nav-text">File类常用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字节输出流：OutputStream"><span class="nav-number">2.</span> <span class="nav-text">字节输出流：OutputStream</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#OutputStream类常用方法"><span class="nav-number">2.1.</span> <span class="nav-text">OutputStream类常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FileOutputStream常用方法"><span class="nav-number">2.2.</span> <span class="nav-text">FileOutputStream常用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字节输入流：InputStream"><span class="nav-number">3.</span> <span class="nav-text">字节输入流：InputStream</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#InputStream类常用方法"><span class="nav-number">3.1.</span> <span class="nav-text">InputStream类常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FileInputStream常用方法"><span class="nav-number">3.2.</span> <span class="nav-text">FileInputStream常用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符输出流：Writer"><span class="nav-number">4.</span> <span class="nav-text">字符输出流：Writer</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Writer类常用方法"><span class="nav-number">4.1.</span> <span class="nav-text">Writer类常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FileWriter常用方法"><span class="nav-number">4.2.</span> <span class="nav-text">FileWriter常用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符输出流：Reader"><span class="nav-number">5.</span> <span class="nav-text">字符输出流：Reader</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reader类常用方法"><span class="nav-number">5.1.</span> <span class="nav-text">Reader类常用方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FileWriter常用方法-1"><span class="nav-number">5.2.</span> <span class="nav-text">FileWriter常用方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例：文件复制"><span class="nav-number">6.</span> <span class="nav-text">案例：文件复制</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
