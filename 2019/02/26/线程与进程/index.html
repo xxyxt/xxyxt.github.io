@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="下雪不下雨的个人博客">
 <meta property="og:description" content="进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。 多线程的实现要想实现多线程程序，需要依靠一个线程的主体类，此类需要继承T">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-26T03:46:36.238Z">
+<meta property="og:updated_time" content="2019-02-26T08:52:35.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线程与进程">
 <meta name="twitter:description" content="进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。 多线程的实现要想实现多线程程序，需要依靠一个线程的主体类，此类需要继承T">
@@ -451,8 +451,8 @@
 </ul>
 <h3 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h3><p><strong>一个代码块中多个操作在同一个时间内只有一个线程进行，其他线程要等待此线程完成后才可以继续执行</strong></p>
 <ul>
-<li>同步代码块：利用Synchronized包装代码块，需要制定同步对象，一般为this</li>
-<li>同步方法：利用synchronized定义方法</li>
+<li>同步代码块：利用<strong>Synchronized</strong>包装代码块，需要制定同步对象，一般为this</li>
+<li>同步方法：利用<strong>synchronized</strong>定义方法</li>
 </ul>
 <h3 id="线程死锁"><a href="#线程死锁" class="headerlink" title="线程死锁"></a>线程死锁</h3><p>同步指的是，一个线程等待另外一个线程执行完毕才会继续执行的形式，而死锁指的是，两个线程都在等待彼此完成，造成了程序的停滞状态</p>
 
