@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。 多线程的实现要想实现多线程程序，需要依靠一个线程的主体类，此类需要继承T">
+<meta name="description" content="进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线程与进程">
 <meta property="og:url" content="https://xxyxt.github.io/2019/02/26/线程与进程/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。 多线程的实现要想实现多线程程序，需要依靠一个线程的主体类，此类需要继承T">
+<meta property="og:description" content="进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-26T08:52:35.017Z">
+<meta property="og:updated_time" content="2019-02-26T08:54:25.089Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线程与进程">
-<meta name="twitter:description" content="进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。 多线程的实现要想实现多线程程序，需要依靠一个线程的主体类，此类需要继承T">
+<meta name="twitter:description" content="进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。">
 
 
 
@@ -412,7 +412,7 @@
       
 
       
-        <p>进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。<br>线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。<br>多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。</p>
+        <p>进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。<br>线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。<br>多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。<br><a id="more"></a></p>
 <h2 id="多线程的实现"><a href="#多线程的实现" class="headerlink" title="多线程的实现"></a>多线程的实现</h2><p>要想实现多线程程序，需要依靠一个线程的主体类，此类需要继承Thread类或实现Runnable(Callable)接口</p>
 <h3 id="继承Thread类"><a href="#继承Thread类" class="headerlink" title="继承Thread类"></a>继承Thread类</h3><p>任何类只需要继承Thread类就会成为一个线程的主类，线程的启动方法需要覆写Thread类的run()方法。<br>格式如下：<br><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">类名称</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">	属性...</span><br><span class="line">	方法...</span><br><span class="line">	public void run()&#123;</span><br><span class="line">		线程主体方法；</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="实现Runnable接口"><a href="#实现Runnable接口" class="headerlink" title="实现Runnable接口"></a>实现Runnable接口</h3><p>继承Thread类具有单继承的局限性，因此可以利用Runnable接口来实现多线程。<br>接口定义：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
