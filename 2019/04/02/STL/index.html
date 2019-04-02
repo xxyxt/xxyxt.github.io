@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="vector 定义：变长数组 123vector&amp;lt;typename&amp;gt; name;vector&amp;lt;int&amp;gt; name;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt;; //二维数组    元素访问 1.和数组一样通过下标索引的方式访问，索引范围[0,vi.size()-1];2.通过迭代器访问,类似于指针 1vector&amp;lt;typename&amp;gt;::it">
+<meta name="description" content="vector 定义：变长数组 123vector&amp;lt;typename&amp;gt; name;vector&amp;lt;int&amp;gt; name;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt;; //二维数组">
 <meta name="keywords" content="C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++ STL介绍">
 <meta property="og:url" content="https://xxyxt.github.io/2019/04/02/STL/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="vector 定义：变长数组 123vector&amp;lt;typename&amp;gt; name;vector&amp;lt;int&amp;gt; name;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt;; //二维数组    元素访问 1.和数组一样通过下标索引的方式访问，索引范围[0,vi.size()-1];2.通过迭代器访问,类似于指针 1vector&amp;lt;typename&amp;gt;::it">
+<meta property="og:description" content="vector 定义：变长数组 123vector&amp;lt;typename&amp;gt; name;vector&amp;lt;int&amp;gt; name;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt;; //二维数组">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-04-02T08:54:38.254Z">
+<meta property="og:updated_time" content="2019-04-02T09:00:28.289Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++ STL介绍">
-<meta name="twitter:description" content="vector 定义：变长数组 123vector&amp;lt;typename&amp;gt; name;vector&amp;lt;int&amp;gt; name;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt;; //二维数组    元素访问 1.和数组一样通过下标索引的方式访问，索引范围[0,vi.size()-1];2.通过迭代器访问,类似于指针 1vector&amp;lt;typename&amp;gt;::it">
+<meta name="twitter:description" content="vector 定义：变长数组 123vector&amp;lt;typename&amp;gt; name;vector&amp;lt;int&amp;gt; name;vector&amp;lt;vector&amp;lt;int&amp;gt; &amp;gt;; //二维数组">
 
 
 
@@ -415,9 +415,7 @@
         <h3 id="vector"><a href="#vector" class="headerlink" title="vector"></a>vector</h3><ul>
 <li><p>定义：变长数组</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">typename</span>&gt; name;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; name;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &gt;; <span class="comment">//二维数组</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
+<a id="more"></a></li>
 <li><p>元素访问</p>
 <p>1.和数组一样通过下标索引的方式访问，索引范围[0,vi.size()-1];<br>2.通过迭代器访问,类似于指针</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">typename</span>&gt;::iterator it;</span><br></pre></td></tr></table></figure>
@@ -469,13 +467,8 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;typename1,typename2&gt; mp;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>访问方式</p>
+<p>迭代器访问：it-&gt;first,it-&gt;second;</p>
 </li>
-</ul>
-<ul>
-<li><ol start="2">
-<li>迭代器访问：it-&gt;first,it-&gt;second;</li>
-</ol>
-<ul>
 <li><p>常用函数</p>
 </li>
 <li><p>find(key):返回键为key的迭代器，时间复杂度O(logn)。</p>
@@ -485,8 +478,6 @@
 <li>erase(first,last):删除[first,last)区间内的元素，时间复杂度O(last-first)。</li>
 <li>size()：获取映射对数。时间复杂度O(1)。</li>
 <li>clear()：清空。时间复杂度O(N)。</li>
-</ul>
-</li>
 </ul>
 <h3 id="queue"><a href="#queue" class="headerlink" title="queue"></a>queue</h3><ul>
 <li>定义：<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">typename</span>&gt; name;</span><br></pre></td></tr></table></figure>
