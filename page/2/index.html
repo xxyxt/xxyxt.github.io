@@ -277,6 +277,440 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/02/28/反射机制/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xxyxt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://goss3.vcg.com/creative/vcg/800/new/VCG211126173663.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="下雪不下雨的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/28/反射机制/" itemprop="url">反射机制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-28T18:32:56+08:00">
+                2019-02-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1.5k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="什么是反射"><a href="#什么是反射" class="headerlink" title="什么是反射"></a>什么是反射</h2><p>在正常的类的使用中，一般是先确定类，然后使用<strong>new</strong>关键字产生实例化对象然后使用。如果想通过对象取得类的信息，那么可以使用Object类中的getClass()方法。<br>反射机制的初步操作如下：</p>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Test1;</span><br><span class="line"><span class="keyword">import</span> java.util.Date;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testDemo18</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span> args[]) &#123;</span><br><span class="line">		Date data=<span class="keyword">new</span> <span class="type">Date</span>();</span><br><span class="line">		System.out.println(data.getClass());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">class java<span class="selector-class">.util</span><span class="selector-class">.Date</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Class类对象实例化的三种方式</strong></p>
+<ul>
+<li>getClass() 使用此类必须要有实例化对象</li>
+<li>类.class 不需要实例化对象</li>
+<li>调用Class类提供的方法：public static Class&lt;?&gt; forName(String className) throws ClassNotFoundException</li>
+</ul>
+<h2 id="反射实例化对象"><a href="#反射实例化对象" class="headerlink" title="反射实例化对象"></a>反射实例化对象</h2><p>实例化Class对象后，就可以利用Class类来进行类的反射控制，Class类的常用方法如下：</p>
+<ul>
+<li>public static Class&lt;?&gt; forName(String className) throws ClassNotFoundException  通过字符串设置类名称实例化Class对象</li>
+<li>public Class&lt;?&gt;[] getInterface() 取得类实现的所有接口</li>
+<li>public String getName() 取得反射操作类全名</li>
+<li>public String getSimpleName() 取得反射操作类名，不包括包名</li>
+<li>public Package getPackage() 取得反射操作类所在的包</li>
+<li>public Class&lt;? super T&gt; getSuperclass() 取得反射操作类的父亲</li>
+<li>public boolean isEnum() 反射操作类是否是枚举</li>
+<li>public boolean isInterface() 反射操作类是否是接口</li>
+<li>public boolean isArray() 反射操作类是否是数组</li>
+<li>public T newInstance() throws  反射实例化对象</li>
+</ul>
+<p>通过newStance()方法，可以实例化Class类包装的类型，不使用关键字new也可以进行对象的实例化操作。<br>注：<strong>使用newStance()方法进行实例化，类中一定要有无参构造方法，否则会出错</strong></p>
+<p>利用反射实例化对象<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Test1;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"这是无参构造"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"hello"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testDemo19</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">		Class&lt;?&gt; cls=Class.forName(<span class="string">"Test1.Book"</span>);</span><br><span class="line">		<span class="meta">@SuppressWarnings</span>(<span class="string">"deprecation"</span>)</span><br><span class="line">		Object obj=cls.newInstance();</span><br><span class="line">		Book book=(Book) obj;</span><br><span class="line">		System.out.println(book);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>本程序通过实例化Class类，然后利用newStance()方法进行类包装的对象的实例化，实例化的对象是Object类，需要向下转型强制变为子类。</p>
+<h2 id="反射调用构造"><a href="#反射调用构造" class="headerlink" title="反射调用构造"></a>反射调用构造</h2><p>使用newStance()方法实例化对象，必须要求类里面存在无参构造方法，如果类中没有无参构造方法的话，就必须通过<strong>java.lang.reflect.Constructor</strong>类来实现对象的反射实例化操作。<br>java.lang.Class取得构造方法的操作如下：</p>
+<ul>
+<li>public Constructor&lt;?&gt;[] getConstructors() throws SecurityException 取得全部的构造方法</li>
+<li>public Constructor<t> getConstructor(Class&lt;?&gt; parameterTypes) throws 取得指定类型的构造方法</t></li>
+</ul>
+<p>Java.lang.reflect.Constructor类常用的操作方法如下：</p>
+<ul>
+<li>public Class&lt;?&gt;[] getExceptionTypes() 取得构造方法上所有抛出异常的类型</li>
+<li>public int getNodifiers() 取得构造方法上的修饰符</li>
+<li>public String getName() 取得构造方法的名字</li>
+<li>public getParameterCount() 取得构造方法中的参数的个数</li>
+<li>public Class&lt;?&gt;[]getParameterTypes() 取得构造方法中的参数类型</li>
+<li>public T newInstance(Object…initargs) 调用指定参数的构造实例化对象</li>
+</ul>
+<p>明确调用勒种有参构造<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Test2;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Constructor;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.InvocationTargetException;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String title;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> price;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Book</span><span class="params">(String title,<span class="keyword">int</span> price)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.title=title;</span><br><span class="line">		<span class="keyword">this</span>.price=price;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">"名字："</span>+<span class="keyword">this</span>.title+<span class="string">",价格："</span>+<span class="keyword">this</span>.price;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testDemo1</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> ClassNotFoundException, NoSuchMethodException, SecurityException, InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException </span>&#123;</span><br><span class="line">		Class&lt;?&gt; cls=Class.forName(<span class="string">"Test2.Book"</span>);</span><br><span class="line">		Constructor&lt;?&gt; con=cls.getConstructor(String.class,<span class="keyword">int</span>.class);</span><br><span class="line">		Object obj=con.newInstance(<span class="string">"中国上下五千年"</span>,<span class="number">199</span>);</span><br><span class="line">		System.out.println(obj);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="反射调用方法"><a href="#反射调用方法" class="headerlink" title="反射调用方法"></a>反射调用方法</h2><p>常用“对象.方法()”调用方法，利用反射机制也可以实现类方法的操作<br>Class类取得方法的操作：</p>
+<ul>
+<li>public Methode[] getMethod() throws SecurityException 取得类中全部的方法</li>
+<li>public Method getMethod(String name,Class&lt;?&gt; parameterTypes) throws 取得类中指定名称与参数类型的方法</li>
+</ul>
+<p>Method常用方法如下：</p>
+<ul>
+<li>public int getModifiers() 取得方法的修饰符</li>
+<li>public Class&lt;?&gt; getReturnType() 取得方法的返回值类型</li>
+<li>public int getParameterCount() 取得方法中定义的参数数量</li>
+<li>public Class&lt;?&gt;[] getParameterTypes() 取得方法定义中参数类型</li>
+<li>public Object invoke(Object obj,Object…args) throws Exception 反射调用方法并执行方法中所需要的参数</li>
+<li>public Class&lt;?&gt;[] getExceptionTypes() 取得方法抛出的异常类型</li>
+</ul>
+<p>使用反射类操作java类属性<br><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Test2;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line">class Book2&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">String</span> title;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">void</span> setTitle(<span class="keyword">String</span> title) &#123;</span><br><span class="line">		<span class="keyword">this</span>.title=title;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">String</span> getTitle() &#123;</span><br><span class="line">		<span class="keyword">return</span> title;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> class testDemo2 &#123;</span><br><span class="line">	@SuppressWarnings(<span class="string">"deprecation"</span>)</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span> args[]) <span class="keyword">throws</span> Exception&#123;</span><br><span class="line">		<span class="keyword">String</span> fieldName=<span class="string">"title"</span>;</span><br><span class="line">		Class&lt;?&gt; cls=Class.forName(<span class="string">"Test2.Book2"</span>);</span><br><span class="line">		<span class="keyword">Object</span> obj=cls.newInstance();</span><br><span class="line">		Method setMet=cls.getMethod(<span class="string">"set"</span>+initcap(fieldName), <span class="keyword">String</span>.class);</span><br><span class="line">		Method getMet=cls.getMethod(<span class="string">"get"</span>+initcap(fieldName));</span><br><span class="line">		setMet.invoke(obj, <span class="string">"Java开发"</span>);</span><br><span class="line">		System.out.<span class="built_in">println</span>(getMet.invoke(obj));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">String</span> initcap(<span class="keyword">String</span> <span class="built_in">str</span>) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="built_in">str</span>.substring(<span class="number">0</span>,<span class="number">1</span>).toUpperCase()+<span class="built_in">str</span>.substring(<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="反射调用成员"><a href="#反射调用成员" class="headerlink" title="反射调用成员"></a>反射调用成员</h2><p>除了构造方法，普通方法，反射类也可以进行成员的操作，Class类中成员的取得方法如下：</p>
+<ul>
+<li>public Field[] getDeclaredFields() throws SecurityException 取得本类定义的全部成员</li>
+<li>public Field getDeclaredFields(String name) throws… 取得本类指定名称成员</li>
+<li>public Field[] getFields() throws SecurityException  取得本类继承父类的全部成员</li>
+<li>public Field getFields(String name) throws…  取得本类继承父类中指定的成员 </li>
+</ul>
+<p>Field类常用描述成员信息的方法如下：</p>
+<ul>
+<li>public Class&lt;?&gt; getType() 取得该成员的类型</li>
+<li>public Object get(Object obj) throws… 取得指定对象中的成员内容</li>
+<li>public void set(Object obj,Object value) throws… 设置指定对象中成员内容，相当于直接利用对象调用成员设置内容</li>
+</ul>
+<p>利用反射类操作私有成员：<br><figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> Test2;</span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Field;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Book3</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">String</span> title;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">testDem03</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span> args[]) throws Exception&#123;</span><br><span class="line">		Class&lt;?&gt; cls=Class.forName(<span class="string">"Test2.Book3"</span>);</span><br><span class="line">		@SuppressWarnings(<span class="string">"deprecation"</span>)</span><br><span class="line">		Object obj=cls.<span class="keyword">new</span><span class="type">Instance</span>();</span><br><span class="line">		Field titField=cls.getDeclaredField(<span class="string">"title"</span>);</span><br><span class="line">		titField.setAccessible(<span class="literal">true</span>);</span><br><span class="line">		titField.<span class="keyword">set</span>(obj, <span class="string">"Java开发"</span>);</span><br><span class="line">		System.out.println(titField.<span class="keyword">get</span>(obj));</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/02/26/Java类集框架/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xxyxt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://goss3.vcg.com/creative/vcg/800/new/VCG211126173663.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="下雪不下雨的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/02/26/Java类集框架/" itemprop="url">Java类集框架</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-26T21:24:54+08:00">
+                2019-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  2.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  10
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="单对象保存父接口：Collection"><a href="#单对象保存父接口：Collection" class="headerlink" title="单对象保存父接口：Collection"></a>单对象保存父接口：Collection</h2><p><strong>定义</strong><br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">public<span class="built_in"> interface </span>Collection&lt;E&gt; extends Iterator&lt;E&gt;</span><br></pre></td></tr></table></figure></p>
+<p><strong>核心方法</strong></p>
+<ul>
+<li>public boolean add(E e) 普通方法 向集合里面保存数据</li>
+<li>public boolean addAll(Collection&lt;? extends E&gt; c) 普通方法 追加一个集合</li>
+<li>public void clear() 普通方法 清空集合，跟元素为null</li>
+<li>public boolean contains(Object o) 普通方法 判断是否含有指定内容，需要equals支持</li>
+<li>public boolean isEmpty() 普通方法 判断是否是空集合</li>
+<li>public boolean remove(Object o) 普通方法 删除对象，需要equals支持</li>
+<li>public int size() 普通方法 取得集合中保存元素的个数</li>
+<li>public Object[] toArray() 普通方法 将集合变为对象数组</li>
+<li>public Inerator<e> iterator() 普通方法 为Iterator接口实例化</e></li>
+</ul>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/26/Java类集框架/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/02/26/线程与进程/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1708,364 +2142,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/20/通配符/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xxyxt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://goss3.vcg.com/creative/vcg/800/new/VCG211126173663.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="下雪不下雨的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/20/通配符/" itemprop="url">通配符</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-20T22:37:15+08:00">
-                2019-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  369
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>泛型技术解决了向下转型的安全性问题，随之而来，又会产生一个新的问题：如果泛型类设置的不同，方法里面的参数引用也必定是不同的，为了解决这个问题，引入了通配符的使用</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/20/通配符/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/01/20/泛型/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xxyxt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://goss3.vcg.com/creative/vcg/800/new/VCG211126173663.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="下雪不下雨的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/20/泛型/" itemprop="url">泛型</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-20T22:15:06+08:00">
-                2019-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  673
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>利用对象的多态性，可以解决方法参数统一的问题，但是随之而来的就是另外一个问题：并不是所有的向下转型都是安全的。从JDK 1.5开始提供了泛型技术，可以有效的解决这一问题</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/20/泛型/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2118,7 +2194,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2144,7 +2220,7 @@
     
 	  <a href="/tags/index.html">
 	
-      <span class="site-state-item-count">12</span>
+      <span class="site-state-item-count">13</span>
       <span class="site-state-item-name">tags</span>
     </a>
   </div>
