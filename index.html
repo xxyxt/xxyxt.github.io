@@ -277,6 +277,201 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/05/09/SQL常用操作/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xxyxt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://goss3.vcg.com/creative/vcg/800/new/VCG211126173663.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="下雪不下雨的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/05/09/SQL常用操作/" itemprop="url">Untitled</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-09T14:30:53+08:00">
+                2019-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  926
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>关于SQL的常见操作主要就是增删改查<br>1.增，就是增加数据。该语句用于向表中插入新纪录。insert into有两种用法。</p>
+<pre><code>- 无需指定要插入数据的列名，只提供被插入的值
+语法：insert into table_name values(value1,value2...)
+但是这种方法要注意一点，那就是需要列出插入行中的每一列数据，如果某一列没有数据的话，可以使用**引号**替代，如果没有列出插入行中每一列数据，就会报错。
+- 指定列名及被插入的值
+语法：insert into table_name(column1,column2...) values(value1,value2)
+通过这种方法也可以向指定的列中添加数据
+- 一次性向表中插入多条数据
+语法：insert into table_name values(value1,value2...)(value3,value4...)。可以指定列名，也可以不指定列名，如果指定了列名，则是向指定列添加数据。如果不指定列名，那么则需要列出插入行中的每一列数据。
+</code></pre><p>2.删，也就是删除数据，这里其实也有两种，delete与drop。然而这两种的效果确实不一样的，虽然都能删除数据。</p>
+<pre><code>- delete。该语句用于删除表中的记录。但是表的结构、属性、索引等仍保持不变，也不会释放内存空间。
+语法：delete from table_name where some_column=some_value
+注意：使用delete删除数据时，如果省略了where语句，那么所有数据都会被删除。
+- drop。该语句用于删除表，且内存空间会被释放。
+例如表myTable中有多条title相同的数据，要删除相同的，只保留一条，那么操作为：　　　
+select distinct * into newTable from myTable;
+delete from myTable;
+insert myTable select * from newTable;
+drop table newTable;
+</code></pre><p>3.改，也就是更改表中的数据（update)，用于更新表中已存在的数据。</p>
+<pre><code>- 语法：update table_name set column1=value1,column2=value2,...where some_column=some_value;
+注意：使用update更新表中数据时，如果省略了where子句，那么表中所有数据都将被更新。
+</code></pre><p>4.查，也就是查询表中的数据（select）。</p>
+<pre><code>- 语法：select column_name,column_name frome table_name;或select * from table_name;
+- 选取表中包含某字符的数据
+例如，选取表myTable中play包含 ‘古’ 的所有数据，则操作为，select * from [dbo].[myTable] where play like &apos;%古%&apos;
+- 选取表中以某字符开始的数据。
+例如，选取表myTable中play以 “古” 开头的所有数据，则操作为，select * from [dbo].[myTable] where play like &apos;古%&apos;
+- 选取表中以某字符结尾的数据。
+例如，选取表myTable中play以 “古” 结尾的所有数据，则操作为，select * from [dbo].[myTable] where play like &apos;%古&apos;
+- 选取表中指定长度包含指定字符的数据。
+例如，选取表myTable中play包含三位且中间为 “古”的数据，则操作为 select * from [dbo].[myTable] where play like &apos;_古_&apos;
+- 选取表myTable中play包含三位且结尾是 “古” 的数据，则操作为 select * from [dbo].[myTable] where play like &apos;__古&apos;
+ps：%  =&gt; 代表0个或多个字符
+</code></pre><p>　　　　_   =&gt; 代表1个字符</p>
+<pre><code>- 使用in操作符，该操作符允许在where子句中规定多个值。
+例如，要选取表myTable中title为 &quot;扫毒&quot; 或 &quot;贪狼&quot; 的数据，则操作为 select * from [dbo].[myTable] where title in (&apos;扫毒&apos;, &apos;贪狼&apos;)
+- between操作符，选取介于两个值之间的数据范围内的值。这些值可以是数值、文本或者日期。
+例如，要选取表myTable中score 介于 10 到 200 间的数据。则操作为 select * from [dbo].[myTable] where score between 10 and 200
+- 选取要返回指定数目的数据（select top）。
+语法：select top number|percent column_name from table_name;
+- 返回表中唯一不同的值（distinct）。
+语法：selcet distinct column_name,column_name from table_name
+</code></pre>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+	<div>
+	  
+	</div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/04/03/拼多多20届春招编程题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1939,185 +2134,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/02/26/线程与进程/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xxyxt">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://goss3.vcg.com/creative/vcg/800/new/VCG211126173663.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="下雪不下雨的个人博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/02/26/线程与进程/" itemprop="url">线程与进程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-26T09:45:15+08:00">
-                2019-02-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count in article&#58;</span>
-                
-                <span title="Words count in article">
-                  984
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>进程：程序的一次动态执行的过程，从代码加载到执行完毕的一整个过程。<br>线程：线程是比进程更小的一个单位，线程是在进程的基础上进一步进行划分，一个进程可以分为多个线程，这些线程同时存在同时运行。<br>多进程：多进程的操作系统可以同时运行多个程序，由于CPU具备分时机制，每个进程都可以循环获得自己的CPU时间，使进程看起来像同时进行一样。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/02/26/线程与进程/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-    
-	<div>
-	  
-	</div>
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2170,7 +2186,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">37</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -2196,7 +2212,7 @@
     
 	  <a href="/tags/index.html">
 	
-      <span class="site-state-item-count">11</span>
+      <span class="site-state-item-count">12</span>
       <span class="site-state-item-name">tags</span>
     </a>
   </div>

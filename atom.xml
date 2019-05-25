@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xxyxt.github.io/"/>
-  <updated>2019-04-03T13:45:01.043Z</updated>
+  <updated>2019-05-09T06:30:53.993Z</updated>
   <id>https://xxyxt.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title></title>
+    <link href="https://xxyxt.github.io/2019/05/09/SQL%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C/"/>
+    <id>https://xxyxt.github.io/2019/05/09/SQL常用操作/</id>
+    <published>2019-05-09T06:30:53.899Z</published>
+    <updated>2019-05-09T06:30:53.993Z</updated>
+    
+    <content type="html"><![CDATA[<p>关于SQL的常见操作主要就是增删改查<br>1.增，就是增加数据。该语句用于向表中插入新纪录。insert into有两种用法。</p><pre><code>- 无需指定要插入数据的列名，只提供被插入的值语法：insert into table_name values(value1,value2...)但是这种方法要注意一点，那就是需要列出插入行中的每一列数据，如果某一列没有数据的话，可以使用**引号**替代，如果没有列出插入行中每一列数据，就会报错。- 指定列名及被插入的值语法：insert into table_name(column1,column2...) values(value1,value2)通过这种方法也可以向指定的列中添加数据- 一次性向表中插入多条数据语法：insert into table_name values(value1,value2...)(value3,value4...)。可以指定列名，也可以不指定列名，如果指定了列名，则是向指定列添加数据。如果不指定列名，那么则需要列出插入行中的每一列数据。</code></pre><p>2.删，也就是删除数据，这里其实也有两种，delete与drop。然而这两种的效果确实不一样的，虽然都能删除数据。</p><pre><code>- delete。该语句用于删除表中的记录。但是表的结构、属性、索引等仍保持不变，也不会释放内存空间。语法：delete from table_name where some_column=some_value注意：使用delete删除数据时，如果省略了where语句，那么所有数据都会被删除。- drop。该语句用于删除表，且内存空间会被释放。例如表myTable中有多条title相同的数据，要删除相同的，只保留一条，那么操作为：　　　select distinct * into newTable from myTable;delete from myTable;insert myTable select * from newTable;drop table newTable;</code></pre><p>3.改，也就是更改表中的数据（update)，用于更新表中已存在的数据。</p><pre><code>- 语法：update table_name set column1=value1,column2=value2,...where some_column=some_value;注意：使用update更新表中数据时，如果省略了where子句，那么表中所有数据都将被更新。</code></pre><p>4.查，也就是查询表中的数据（select）。</p><pre><code>- 语法：select column_name,column_name frome table_name;或select * from table_name;- 选取表中包含某字符的数据例如，选取表myTable中play包含 ‘古’ 的所有数据，则操作为，select * from [dbo].[myTable] where play like &apos;%古%&apos;- 选取表中以某字符开始的数据。例如，选取表myTable中play以 “古” 开头的所有数据，则操作为，select * from [dbo].[myTable] where play like &apos;古%&apos;- 选取表中以某字符结尾的数据。例如，选取表myTable中play以 “古” 结尾的所有数据，则操作为，select * from [dbo].[myTable] where play like &apos;%古&apos;- 选取表中指定长度包含指定字符的数据。例如，选取表myTable中play包含三位且中间为 “古”的数据，则操作为 select * from [dbo].[myTable] where play like &apos;_古_&apos;- 选取表myTable中play包含三位且结尾是 “古” 的数据，则操作为 select * from [dbo].[myTable] where play like &apos;__古&apos;ps：%  =&gt; 代表0个或多个字符</code></pre><p>　　　　_   =&gt; 代表1个字符</p><pre><code>- 使用in操作符，该操作符允许在where子句中规定多个值。例如，要选取表myTable中title为 &quot;扫毒&quot; 或 &quot;贪狼&quot; 的数据，则操作为 select * from [dbo].[myTable] where title in (&apos;扫毒&apos;, &apos;贪狼&apos;)- between操作符，选取介于两个值之间的数据范围内的值。这些值可以是数值、文本或者日期。例如，要选取表myTable中score 介于 10 到 200 间的数据。则操作为 select * from [dbo].[myTable] where score between 10 and 200- 选取要返回指定数目的数据（select top）。语法：select top number|percent column_name from table_name;- 返回表中唯一不同的值（distinct）。语法：selcet distinct column_name,column_name from table_name</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;关于SQL的常见操作主要就是增删改查&lt;br&gt;1.增，就是增加数据。该语句用于向表中插入新纪录。insert into有两种用法。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;- 无需指定要插入数据的列名，只提供被插入的值
+语法：insert into table_name values(
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>拼多多20届春招编程题</title>
@@ -458,28 +481,6 @@
     <summary type="html">
     
       &lt;p&gt;利用对象的多态性，可以解决方法参数统一的问题，但是随之而来的就是另外一个问题：并不是所有的向下转型都是安全的。从JDK 1.5开始提供了泛型技术，可以有效的解决这一问题&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="学习笔记" scheme="https://xxyxt.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-      <category term="Java" scheme="https://xxyxt.github.io/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>foreach循环</title>
-    <link href="https://xxyxt.github.io/2019/01/20/foreach%E5%BE%AA%E7%8E%AF/"/>
-    <id>https://xxyxt.github.io/2019/01/20/foreach循环/</id>
-    <published>2019-01-20T14:00:09.402Z</published>
-    <updated>2019-01-20T14:00:22.294Z</updated>
-    
-    <content type="html"><![CDATA[<p>foreach循环是一种加强型的for循环，主要用于简化数组或者集合数据的输出</p><a id="more"></a><p>传统的输出代码如下：</p><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">testDeno6</span> &#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span> &#123;</span><br><span class="line"><span class="keyword">int</span> data[]=<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>&#125;;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> x=<span class="number">0</span>;x&lt;data.length;x++) &#123;</span><br><span class="line">System.<span class="keyword">out</span>.println(data[x] );</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>传统的数组输出使用下标索引的方式实现数据的输出，从JDK 1.5开始for循环有了以下形式：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">for</span><span class="params">(数据类型 变量:数组 | 集合)</span></span>&#123;</span><br><span class="line"><span class="comment">//每次循环会将数组的内容设置给变量</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">代码如下：</span><br></pre></td></tr></table></figure></p><p>public class testDeno6 {<br>    public static void main(String args[]) {<br>        int data[]=new int[]{4,5,6,8,9};<br>        for(int x:data) {<br>            System.out.println(x );<br>        }<br>    }</p><p>}<br><code>`</code></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;foreach循环是一种加强型的for循环，主要用于简化数组或者集合数据的输出&lt;/p&gt;
     
     </summary>
     
