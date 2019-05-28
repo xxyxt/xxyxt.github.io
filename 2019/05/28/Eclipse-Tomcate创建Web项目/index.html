@@ -81,13 +81,13 @@
 
 
 
-<meta name="description" content="前期准备： Tomcate下载：https://tomcat.apache.org/下载免安装版，下载完成直接解压到jdk的安装目录 在eclipse中配置Tomcate：可以参考这篇文章https://www.cnblogs.com/Leo_wl/p/4769760.html  遇到的问题 Q1、配置完Tomcate之后，在启动过程中点击Window-&amp;gt;showview-&amp;gt;Serve">
+<meta name="description" content="前期准备： Tomcate下载：https://tomcat.apache.org/下载免安装版，下载完成直接解压到jdk的安装目录 在eclipse中配置Tomcate：可以参考这篇文章https://www.cnblogs.com/Leo_wl/p/4769760.html">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Eclipse Tomcate创建Web项目">
 <meta property="og:url" content="https://xxyxt.github.io/2019/05/28/Eclipse-Tomcate创建Web项目/index.html">
 <meta property="og:site_name" content="下雪不下雨的个人博客">
-<meta property="og:description" content="前期准备： Tomcate下载：https://tomcat.apache.org/下载免安装版，下载完成直接解压到jdk的安装目录 在eclipse中配置Tomcate：可以参考这篇文章https://www.cnblogs.com/Leo_wl/p/4769760.html  遇到的问题 Q1、配置完Tomcate之后，在启动过程中点击Window-&amp;gt;showview-&amp;gt;Serve">
+<meta property="og:description" content="前期准备： Tomcate下载：https://tomcat.apache.org/下载免安装版，下载完成直接解压到jdk的安装目录 在eclipse中配置Tomcate：可以参考这篇文章https://www.cnblogs.com/Leo_wl/p/4769760.html">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190528162412868.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190528163944671.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70">
@@ -95,10 +95,10 @@
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190528164317155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20190528164618520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/2019052816474081.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-05-28T08:49:38.004Z">
+<meta property="og:updated_time" content="2019-05-28T08:54:29.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eclipse Tomcate创建Web项目">
-<meta name="twitter:description" content="前期准备： Tomcate下载：https://tomcat.apache.org/下载免安装版，下载完成直接解压到jdk的安装目录 在eclipse中配置Tomcate：可以参考这篇文章https://www.cnblogs.com/Leo_wl/p/4769760.html  遇到的问题 Q1、配置完Tomcate之后，在启动过程中点击Window-&amp;gt;showview-&amp;gt;Serve">
+<meta name="twitter:description" content="前期准备： Tomcate下载：https://tomcat.apache.org/下载免安装版，下载完成直接解压到jdk的安装目录 在eclipse中配置Tomcate：可以参考这篇文章https://www.cnblogs.com/Leo_wl/p/4769760.html">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20190528162412868.png">
 
 
@@ -423,13 +423,17 @@
 <li>Tomcate下载：<a href="https://tomcat.apache.org/" target="_blank" rel="noopener">https://tomcat.apache.org/</a><br>下载免安装版，下载完成直接解压到jdk的安装目录<br><img src="https://img-blog.csdnimg.cn/20190528162412868.png" alt="在这里插入图片描述"></li>
 <li>在eclipse中配置Tomcate：可以参考这篇文章<br><a href="https://www.cnblogs.com/Leo_wl/p/4769760.html" target="_blank" rel="noopener">https://www.cnblogs.com/Leo_wl/p/4769760.html</a></li>
 </ul>
+<a id="more"></a>
 <h3 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h3><ul>
-<li>Q1、配置完Tomcate之后，在启动过程中点击Window-&gt;showview-&gt;Servers，找不到server选项。</li>
-<li>解决办法：参考下面的连接<br><a href="https://blog.csdn.net/wssmiss/article/details/88069484" target="_blank" rel="noopener">https://blog.csdn.net/wssmiss/article/details/88069484</a><ul>
+<li><p>Q1、配置完Tomcate之后，在启动过程中点击Window-&gt;showview-&gt;Servers，找不到server选项。</p>
+</li>
+<li><p>解决办法：参考下面的连接<br><a href="https://blog.csdn.net/wssmiss/article/details/88069484" target="_blank" rel="noopener">https://blog.csdn.net/wssmiss/article/details/88069484</a></p>
+<ul>
 <li>Q2、通过Tomcate的根目录中的bin目录下的starup.bat可以启动Tomcate服务，打开 <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a> 中也可以看到Tomcate的介绍页面，但是新建的web工程启动服务之后一直404。<br><strong>通过starup.bat可以启动成功</strong><br><img src="https://img-blog.csdnimg.cn/20190528163944671.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>在eclipse中新建web工程启动服务是 一直404<br><img src="https://img-blog.csdnimg.cn/20190528164239391.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/20190528164317155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
 </ul>
 </li>
-<li>解决办法：参考链接<br><a href="https://blog.csdn.net/x123453316/article/details/80951239" target="_blank" rel="noopener">https://blog.csdn.net/x123453316/article/details/80951239</a><br>很简单的解决办法：就是.jsp文件不可以放在WEB-INF文件夹下，要在Webcontent目录下新建文件夹，将.jsp文件放入新建的文件夹里面就可以了。<br><img src="https://img-blog.csdnimg.cn/20190528164618520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>运行成功<br><img src="https://img-blog.csdnimg.cn/2019052816474081.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+<li><p>解决办法：参考链接<br><a href="https://blog.csdn.net/x123453316/article/details/80951239" target="_blank" rel="noopener">https://blog.csdn.net/x123453316/article/details/80951239</a><br>很简单的解决办法：就是.jsp文件不可以放在WEB-INF文件夹下，要在Webcontent目录下新建文件夹，将.jsp文件放入新建的文件夹里面就可以了。<br><img src="https://img-blog.csdnimg.cn/20190528164618520.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>运行成功<br><img src="https://img-blog.csdnimg.cn/2019052816474081.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MzEyMzkwMA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+</li>
 </ul>
 
       
