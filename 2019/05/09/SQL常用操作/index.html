@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="数据库,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="下雪不下雨的个人博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="关于SQL的常见操作主要就是增删改查 增，就是增加数据。该语句用于向表中插入新纪录。insert into有两种用法。 无需指定要插入数据的列名，只提供被插入的值  语法：insert into table_name values(value1,value2…)但是这种方法要注意一点，那就是需要列出插入行中的每一列数据，如果某一列没有数据的话，可以使用引号替代，如果没有列出插入行中每一列数据，就会">
+<meta name="keywords" content="数据库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL常用操作2">
+<meta property="og:url" content="https://xxyxt.github.io/2019/05/09/SQL常用操作/index.html">
+<meta property="og:site_name" content="下雪不下雨的个人博客">
+<meta property="og:description" content="关于SQL的常见操作主要就是增删改查 增，就是增加数据。该语句用于向表中插入新纪录。insert into有两种用法。 无需指定要插入数据的列名，只提供被插入的值  语法：insert into table_name values(value1,value2…)但是这种方法要注意一点，那就是需要列出插入行中的每一列数据，如果某一列没有数据的话，可以使用引号替代，如果没有列出插入行中每一列数据，就会">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-05-28T08:54:38.213Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL常用操作2">
+<meta name="twitter:description" content="关于SQL的常见操作主要就是增删改查 增，就是增加数据。该语句用于向表中插入新纪录。insert into有两种用法。 无需指定要插入数据的列名，只提供被插入的值  语法：insert into table_name values(value1,value2…)但是这种方法要注意一点，那就是需要列出插入行中的每一列数据，如果某一列没有数据的话，可以使用引号替代，如果没有列出插入行中每一列数据，就会">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xxyxt.github.io/2019/05/09/SQL常用操作/">
+
+
+
+
+
+  <title>SQL常用操作2 | 下雪不下雨的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<script type="text/javascript" color="0,0,255" opacity="0.7" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/xxyxt"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">下雪不下雨的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">to be a learner</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/05/09/SQL常用操作/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xxyxt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://goss3.vcg.com/creative/vcg/800/new/VCG211126173663.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="下雪不下雨的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SQL常用操作2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-09T14:30:53+08:00">
+                2019-05-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/05/09/SQL常用操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/05/09/SQL常用操作/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> View
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  914
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关于SQL的常见操作主要就是增删改查</p>
+<h3 id="增，就是增加数据。该语句用于向表中插入新纪录。insert-into有两种用法。"><a href="#增，就是增加数据。该语句用于向表中插入新纪录。insert-into有两种用法。" class="headerlink" title="增，就是增加数据。该语句用于向表中插入新纪录。insert into有两种用法。"></a>增，就是增加数据。该语句用于向表中插入新纪录。insert into有两种用法。</h3><ul>
+<li>无需指定要插入数据的列名，只提供被插入的值</li>
+</ul>
+<p>语法：insert into table_name values(value1,value2…)<br>但是这种方法要注意一点，那就是需要列出插入行中的每一列数据，如果某一列没有数据的话，可以使用<strong>引号</strong>替代，如果没有列出插入行中每一列数据，就会报错。</p>
+<ul>
+<li>指定列名及被插入的值</li>
+</ul>
+<p>语法：insert into table_name(column1,column2…) values(value1,value2)<br>通过这种方法也可以向指定的列中添加数据</p>
+<ul>
+<li>一次性向表中插入多条数据</li>
+</ul>
+<p>语法：insert into table_name values(value1,value2…)(value3,value4…)。可以指定列名，也可以不指定列名，如果指定了列名，则是向指定列添加数据。如果不指定列名，那么则需要列出插入行中的每一列数据。<br><a id="more"></a></p>
+<h3 id="删，也就是删除数据，这里其实也有两种，delete与drop。然而这两种的效果确实不一样的，虽然都能删除数据。"><a href="#删，也就是删除数据，这里其实也有两种，delete与drop。然而这两种的效果确实不一样的，虽然都能删除数据。" class="headerlink" title="删，也就是删除数据，这里其实也有两种，delete与drop。然而这两种的效果确实不一样的，虽然都能删除数据。"></a>删，也就是删除数据，这里其实也有两种，delete与drop。然而这两种的效果确实不一样的，虽然都能删除数据。</h3><ul>
+<li>delete。该语句用于删除表中的记录。但是表的结构、属性、索引等仍保持不变，也不会释放内存空间。</li>
+</ul>
+<p>语法：delete from table_name where some_column=some_value<br>ps:truncate table_name 清空表 数据重置<br>注意：使用delete删除数据时，如果省略了where语句，那么所有数据都会被删除。</p>
+<ul>
+<li>drop。该语句用于删除表，且内存空间会被释放。</li>
+</ul>
+<p>例如表myTable中有多条title相同的数据，要删除相同的，只保留一条，那么操作为：　　　<br>select distinct <em> into newTable from myTable;<br>delete from myTable;<br>insert myTable select </em> from newTable;<br>drop table newTable;</p>
+<h3 id="改，也就是更改表中的数据（update-，用于更新表中已存在的数据。"><a href="#改，也就是更改表中的数据（update-，用于更新表中已存在的数据。" class="headerlink" title="改，也就是更改表中的数据（update)，用于更新表中已存在的数据。"></a>改，也就是更改表中的数据（update)，用于更新表中已存在的数据。</h3><ul>
+<li>语法：update table_name set column1=value1,column2=value2,…where some_column=some_value;注意：使用update更新表中数据时，如果省略了where子句，那么表中所有数据都将被更新。</li>
+</ul>
+<h3 id="查，也就是查询表中的数据（select）。"><a href="#查，也就是查询表中的数据（select）。" class="headerlink" title="查，也就是查询表中的数据（select）。"></a>查，也就是查询表中的数据（select）。</h3><ul>
+<li><p>语法：select column_name,column_name frome table_name;或select * from table_name;</p>
+</li>
+<li><p>选取表中包含某字符的数据</p>
+</li>
+</ul>
+<p>例如，选取表myTable中play包含 ‘古’ 的所有数据，则操作为，select * from [dbo].[myTable] where play like ‘%古%’    </p>
+<ul>
+<li>选取表中以某字符开始的数据。    </li>
+</ul>
+<p>例如，选取表myTable中play以 “古” 开头的所有数据，则操作为，select * from [dbo].[myTable] where play like ‘古%’</p>
+<ul>
+<li>选取表中以某字符结尾的数据。</li>
+</ul>
+<p>例如，选取表myTable中play以 “古” 结尾的所有数据，则操作为，select * from [dbo].[myTable] where play like ‘%古’</p>
+<ul>
+<li>选取表中指定长度包含指定字符的数据。</li>
+</ul>
+<p>例如，选取表myTable中play包含三位且中间为 “古”的数据，则操作为 select * from [dbo].[myTable] where play like ‘_古_’</p>
+<ul>
+<li><p>选取表myTable中play包含三位且结尾是 “古” 的数据，则操作为 select * from [dbo].[myTable] where play like ‘__古’<br>ps：%  =&gt; 代表0个或多个字符<br>　　　　_   =&gt; 代表1个字符</p>
+</li>
+<li><p>使用in操作符，该操作符允许在where子句中规定多个值。</p>
+</li>
+</ul>
+<p>例如，要选取表myTable中title为 “扫毒” 或 “贪狼” 的数据，则操作为 select * from [dbo].[myTable] where title in (‘扫毒’, ‘贪狼’)</p>
+<ul>
+<li>between操作符，选取介于两个值之间的数据范围内的值。这些值可以是数值、文本或者日期。</li>
+</ul>
+<p>例如，要选取表myTable中score 介于 10 到 200 间的数据。则操作为 select * from [dbo].[myTable] where score between 10 and 200</p>
+<ul>
+<li>选取要返回指定数目的数据（select top）。</li>
+</ul>
+<p>语法：select top number|percent column_name from table_name;</p>
+<ul>
+<li>返回表中唯一不同的值（distinct）。</li>
+</ul>
+<p>语法：selcet distinct column_name,column_name from table_name</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+	  
+	</div>
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="xxyxt WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据库/" rel="tag"># 数据库</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/03/拼多多20届春招编程题/" rel="next" title="拼多多20届春招编程题">
+                <i class="fa fa-chevron-left"></i> 拼多多20届春招编程题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/05/25/面试之路/" rel="prev" title="入坑之路">
+                入坑之路 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://goss3.vcg.com/creative/vcg/800/new/VCG211126173663.jpg" alt="xxyxt">
+            
+              <p class="site-author-name" itemprop="name">xxyxt</p>
+              <p class="site-description motion-element" itemprop="description">点滴记录 | step by step</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+			
+            
+  
+  
+  <div class="site-state-item site-state-categories">
+    
+	  <a href="/categories/index.html">
+	
+      <span class="site-state-item-count">6</span>
+      <span class="site-state-item-name">categories</span>
+    </a>
+  </div>
+
+
+
+  
+  
+  <div class="site-state-item site-state-tags">
+    
+	  <a href="/tags/index.html">
+	
+      <span class="site-state-item-count">15</span>
+      <span class="site-state-item-name">tags</span>
+    </a>
+  </div>
+
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xxyxt" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xiangtao@zju.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/weixin_43123900" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#增，就是增加数据。该语句用于向表中插入新纪录。insert-into有两种用法。"><span class="nav-number">1.</span> <span class="nav-text">增，就是增加数据。该语句用于向表中插入新纪录。insert into有两种用法。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删，也就是删除数据，这里其实也有两种，delete与drop。然而这两种的效果确实不一样的，虽然都能删除数据。"><span class="nav-number">2.</span> <span class="nav-text">删，也就是删除数据，这里其实也有两种，delete与drop。然而这两种的效果确实不一样的，虽然都能删除数据。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#改，也就是更改表中的数据（update-，用于更新表中已存在的数据。"><span class="nav-number">3.</span> <span class="nav-text">改，也就是更改表中的数据（update)，用于更新表中已存在的数据。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查，也就是查询表中的数据（select）。"><span class="nav-number">4.</span> <span class="nav-text">查，也就是查询表中的数据（select）。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+
+&copy; 
+<span itemprop="copyrightYear">2019</span>
+<span class="with-love">
+<i class="fa fa-heart"></i>
+</span>
+<span class="author" itemprop="copyrightHolder">xxyxt</span>
+<div class="theme-info"> |
+Powered by <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a>
+Theme -
+<a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+NexT.Gemini
+</a>
+</div>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> Visitor
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> Total Visit
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'xxyxt',
+            repo: 'gitment-comments.github.io# MUST HAVE, The repo you use to store Gitment comments',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '45357d148538076b17a8714d739ebb1a58bf025e',
+            
+                client_id: '33103de923e38fc8ee09'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
