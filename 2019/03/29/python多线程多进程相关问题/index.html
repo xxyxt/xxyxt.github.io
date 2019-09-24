@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="转载,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="下雪不下雨的个人博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="在线考试 本次考试成绩：55 答题剩余时间0小时43分9秒考生须知1.本次周考结束后，剩余补考次数：2次2.周考时间为60分钟，超时系统自动交卷3.本次考试满分100分（5*20道），60分通过考试1.(单选题)三个进程共享四个同类资源，这些资源的分配与释放只能一次一个。已知每一个进程最多需要两个该类资源，则该系统( )。 A.有些进程可能永远得不到该类资源 B.必然有死锁 C.进程请求该类资源立">
+<meta name="keywords" content="转载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python多线程多进程相关问题">
+<meta property="og:url" content="https://xxyxt.github.io/2019/03/29/python多线程多进程相关问题/index.html">
+<meta property="og:site_name" content="下雪不下雨的个人博客">
+<meta property="og:description" content="在线考试 本次考试成绩：55 答题剩余时间0小时43分9秒考生须知1.本次周考结束后，剩余补考次数：2次2.周考时间为60分钟，超时系统自动交卷3.本次考试满分100分（5*20道），60分通过考试1.(单选题)三个进程共享四个同类资源，这些资源的分配与释放只能一次一个。已知每一个进程最多需要两个该类资源，则该系统( )。 A.有些进程可能永远得不到该类资源 B.必然有死锁 C.进程请求该类资源立">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-03-29T02:24:46.892Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python多线程多进程相关问题">
+<meta name="twitter:description" content="在线考试 本次考试成绩：55 答题剩余时间0小时43分9秒考生须知1.本次周考结束后，剩余补考次数：2次2.周考时间为60分钟，超时系统自动交卷3.本次考试满分100分（5*20道），60分通过考试1.(单选题)三个进程共享四个同类资源，这些资源的分配与释放只能一次一个。已知每一个进程最多需要两个该类资源，则该系统( )。 A.有些进程可能永远得不到该类资源 B.必然有死锁 C.进程请求该类资源立">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xxyxt.github.io/2019/03/29/python多线程多进程相关问题/">
+
+
+
+
+
+  <title>python多线程多进程相关问题 | 下雪不下雨的个人博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<script type="text/javascript" color="0,0,255" opacity="0.7" zindex="-2" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	<a href="https://github.com/xxyxt"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">下雪不下雨的个人博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">to be a learner</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            Commonweal 404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xxyxt.github.io/2019/03/29/python多线程多进程相关问题/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xxyxt">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://goss3.vcg.com/creative/vcg/800/new/VCG211126173663.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="下雪不下雨的个人博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python多线程多进程相关问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-29T10:13:48+08:00">
+                2019-03-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/29/python多线程多进程相关问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/29/python多线程多进程相关问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> View
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  4.2k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在线考试 本次考试成绩：55 答题剩余时间0小时43分9秒<br>考生须知<br>1.本次周考结束后，剩余补考次数：2次<br>2.周考时间为60分钟，超时系统自动交卷<br>3.本次考试满分100分（5*20道），60分通过考试<br>1.<br>(单选题)三个进程共享四个同类资源，这些资源的分配与释放只能一次一个。已知每一个进程最多需要两个该类资源，则该系统( )。<br> A.有些进程可能永远得不到该类资源<br> B.必然有死锁<br> C.进程请求该类资源立刻能得到<br> D.无<br> <a id="more"></a><br>正确答案：C<br>解析：<br>不会发生死锁。因为每个进程都分得一个资源时，还有一个资源可以让任意一个进程满足，这样这个进程可以顺利运行完成进而释放它的资源<br>我要反馈<br>2.<br>(单选题)一个队列的入队序列是a、b、c、d，则队列的输出序列为（）<br> A.abcd<br> B.dcba<br> C.acdb<br> D.bcda<br>正确答案：A<br>解析：<br>队列是先进先出的<br>我要反馈<br>3.<br>(单选题)下列关于管道通信的叙述中，正确的是 （）<br> A.一个管道可实现双向数据传输<br> B.管道的容量仅受磁盘容量大小限制<br> C.进程对管道进行读操作和写操作都可以被阻塞<br> D.一个管道只能有一个读写进程或一个写进程对其操作<br>正确答案：C<br>解析：<br>管道是单向的、先进先出的，它把一个进程的输出和另一个进程的输入连接在一起。一个进程（写进程）在管道的尾部写入数据，另一个进程（读进程）在管道的头部读出数据。数据被一个进程读出后，将被从管道中删除，其它读进程将再不能读到这些数据。管道提供了简单的流控制机制，进程试图读空管道时，进程将阻塞。同样，管道已经满时，进程再试图向管道写入数据，进程将阻塞。<br>管道是一个固定大小的缓冲区。在Linux中，该缓冲区的大小为1页，即4K（这里现在为65536byte）字节，使得它的大小不象文件那样不加检验地增长。使用单个固定缓冲区也会带来问题，比如在写管道时可能变满，当这种情况发生时，随后对管道的write()调用将默认地被阻塞，等待某些数据被读取，以便腾出足够的空间供write()调用写。<br>我要反馈<br>4.<br>(单选题)下面有关孤儿进程和僵尸进程的描述，说法错误的是？<br> A.孤儿进程：一个父进程退出，而它的一个或多个子进程还在运行，那么那些子进程将成为孤儿进程。<br> B.僵尸进程：一个进程使用fork创建子进程，如果子进程退出，而父进程并没有调用wait或waitpid获取子进程的状态信息，那么子进程的进程描述符仍然保存在系统中。这种进程称之为僵死进程<br> C.孤儿进程将被init进程(进程号为1)所收养，并由init进程对它们完成状态收集工作<br> D.孤儿进程和僵尸进程都可能使系统不能产生新的进程，都应该避免<br>正确答案：D<br>解析：<br>孤儿进程：一个父进程退出，而它的一个或多个子进程还在运行，那么那些子进程将成为孤儿进程。孤儿进程将被init进程(进程号为1)所收养，并由init进程对它们完成状态收集工作。</p>
+<p>僵尸进程：一个进程使用fork创建子进程，如果子进程退出，而父进程并没有调用wait或waitpid获取子进程的状态信息，那么子进程的进程描述符仍然保存在系统中。这种进程称之为僵死进程。</p>
+<p>如果进程不调用wait / waitpid的话，  那么保留的那段信息就不会释放，其进程号就会一直被占用，但是系统所能使用的进程号是有限的，如果大量的产生僵死进程，将因为没有可用的进程号而导致系统不能产生新的进程. 此即为僵尸进程的危害，应当避免。</p>
+<p>孤儿进程是没有父进程的进程，孤儿进程这个重任就落到了init进程身上 ，init进程就好像是一个民政局，专门负责处理孤儿进程的善后工作。每当出现一个孤儿进程的时候，内核就把孤 儿进程的父进程设置为init，而init进程会循环地wait()它的已经退出的子进程。这样，当一个孤儿进程凄凉地结束了其生命周期的时候，init进程就会代表党和政府出面处理它的一切善后工作。 因此孤儿进程并不会有什么危害。<br>我要反馈<br>5.<br>(单选题)对于两个并发进程，设互斥信号量为 mutex ，且初始值为 1 ，若 mutex=1 ，则（ ）。<br> A.表示没有进程进入临界区<br> B.表示有一个进程进入临界区<br> C.表示有一个进程进入临界区，另一个进程等待进入<br> D.表示有两个进程进入临界区<br>正确答案：A<br>解析：<br>mutex=1时，表示两个进程皆未进去需要互斥的临界区，mutex=0时表示有一个进程进去临界区运行，另外一个必须等待，挂入阻塞队列，mutex=-1时表示有一个进程正在临界区运行，另外一个进程因等待而阻塞在信号量队列中，需要被当前已在临界区运行的进程退出时唤醒<br>我要反馈<br>6.<br>(单选题)有关多线程，多进程的描述错误的是？（    ）<br> A.子进程获得父进程的数据空间，堆和栈的复制品<br> B.线程可以与同进程的其他线程共享数据，但是它拥有自己的栈空间且拥有独立的执行序列<br> C.线程执行开销小，但是不利于资源管理和保护<br> D.进程是CPU调度和分派的基本单位。<br>正确答案：D<br>解析：<br>解析：线程是CPU调度和分派的基本单位。 进程是操作系统的基本单位。<br>我要反馈<br>7.<br>(单选题)启动线程时不调用start()而使用调用run()方法，会有什么后果<br> A.不会启动新线程，run方法也不会执行。<br> B.不会启动新线程，但是run方法会执行。<br> C.启动了新线程，但是run方法不会被执行。<br> D.启动了新线程，run方法也会被执行。<br>正确答案：B<br>解析：<br>start()方法执行之后表面上看起来直接执行run()方法，但是两者是有很大差别的：<br>run()方法只是一个类中的普通方法，直接执行和普通的方法没有上面两样<br>就相当于对象调用方法，执行方法<br>我要反馈<br>8.<br>(单选题)在多进程的系统里,一个进程已经占有足够的资源,如果还占有更多的资源会引起什么现象？<br> A.饥饿<br> B.死锁<br> C.同步<br> D.互斥<br>正确答案：B<br>解析：<br>1：饥饿是指一个可运行的进程尽管能继续执行，但被调度程序无限期地忽略，而不能被调度执行的情形。<br>2：死锁是两个或两个以上的进程其中每个进程都在等待其它进程做完某些事而不能继续执行。<br>3：互斥是当一个进程在临界区访问共享资源时，其它进程不能进入该临界区访问任何共享资源。<br>4：同步比较好理解<br>题目中说一个进程已经占有很多资源了，它还需要更多的资源，所以在没得到这些资源之前，它所占有的这些资源不能得到释放，其它进程就无法获得这些资源，而改程序所需要的资源也很可能被其它进程所占有，因此造成死锁；<br>我要反馈<br>9.<br>(多选题)关于多进程并发和多线程编程，以下哪些说法正确的（）<br> A.对于计算密集型程序，多进程并发优于多线程并发<br> B.多进程并发即运行多个独立的程序，优势在于并发处理的任务都由操作系统管理<br> C.多线程并发则由程序员管理并处理并发任务，这种并发方式可以方便地在线程之间共享数据（前提是不能互斥）<br> D.以上说法均不正确<br>正确答案：ABC<br>解析：<br>本题考查多进程并发多线程并发基础知识<br>我要反馈<br>10.<br>(单选题)可以让多个线程顺序执行的方法是（）<br> A.sleep()<br> B.wait()<br> C.interrupt()<br> D.join()<br>正确答案：D<br>解析：<br>join()方法使调用该方法的线程在此之前执行完毕，也就是等待该方法的线程执行完毕后再往下继续执行。注意该方法也需要捕捉异常。<br>我要反馈<br>11.<br>(单选题)下列几种关于进程的叙述，（）最不符合操作系统对进程的理解？<br> A.进程是在多程序并行环境中的完整的程序<br> B.进程可以由程序、数据和进程控制块描述<br> C.线程是一种特殊的进程<br> D.进程是程序在一个数据集合上运行的过程，它是系统进行资源分配和调度的一个独立单位<br>正确答案：A<br>解析：<br>链接：<a href="https://www.nowcoder.com/questionTerminal/3d94695d207f4391895fb4bfd357e941" target="_blank" rel="noopener">https://www.nowcoder.com/questionTerminal/3d94695d207f4391895fb4bfd357e941</a><br>来源：牛客网</p>
+<p>进程 （Process）是计算机中的程序关于某数据集合上的一次运行活动，是系统进行资源分配和调度的基本单位，是操作系统结构的基础。进程是一个具有一定独立功能的程序关于某个数据集合的一次运行活动。进程的概念主要有两点：第一，进程是一个实体。每一个进程都有它自己的地址空间，一般情况下，包括文本 区域（text region）、数据区域（data region）和堆栈 （stack region）。文本区域存储处理器执行的代码；数据区域存储变量和进程执行期间使用的动态分配的内存；堆栈区域存储着活动过程调用的指令和本地变量。第二，进程是一个“执行中的程序”。程序是一个没有生命的实体，只有处理 器赋予程序生命时（操作系统执行之），它才能成为一个活动的实体，我们称其为进程。<br>我要反馈<br>12.<br>(单选题)下列不是进程间的通信方式的是（）<br> A.管道<br> B.回调<br> C.共享内存<br> D.socket<br>正确答案：B<br>解析：<br>1.管道( pipe )：管道是一种半双工的通信方式，数据只能单向流动，而且只能在具有亲缘关系的进程间使用。进程的亲缘关系通常是指父子进程关系。<br>2.信号量( semophore ) ： 信号量是一个计数器，可以用来控制多个进程对共享资源的访问。它常作为一种锁机制，防止某进程正在访问共享资源时，其他进程也访问该资源。因此，主要作为进程间以及同一进程内不同线程之间的同步手段。<br>3.消息队列( message queue ) ： 消息队列是由消息的链表，存放在内核中并由消息队列标识符标识。消息队列克服了信号传递信息少、管道只能承载无格式字节流以及缓冲区大小受限等缺点。<br>4.共享内存( shared memory ) ：共享内存就是映射一段能被其他进程所访问的内存，这段共享内存由一个进程创建，但多个进程都可以访问。共享内存是最快的 IPC 方式，它是针对其他进程间通信方式运行效率低而专门设计的。它往往与其他通信机制，如信号两，配合使用，来实现进程间的同步和通信。 </p>
+<ol start="5">
+<li>套接字( socket ) ： 套解口也是一种进程间通信机制，与其他通信机制不同的是，它可用于不同及其间的进程通信<br>6.回调： 是一种编程机制<br>我要反馈<br>13.<br>(单选题)关于程序和进程，以下哪种说法是正确的<br>A.程序是动态的，进程是静态的<br>B.程序是静态的，进程是动态的<br>C.程序和进程都是动态的<br>D.程序和进程都是静态的<br>正确答案：B<br>解析：<br>本题考查程序和进程的区别。<br>我要反馈<br>14.<br>(多选题)下列属于事件方法的是（）<br>A.wait<br>B.clear<br>C.set<br>D.以上都不是<br>正确答案：ABC<br>解析：<br>python线程的事件用于主线程控制其他线程的执行，事件主要提供了三个方法wait、clear、set</li>
+</ol>
+<p>事件处理的机制：全局定义了一个“Flag”，如果“Flag”值为 False，那么当程序执行 event.wait 方法时就会阻塞，如果“Flag”值为True，那么event.wait 方法时便不再阻塞。</p>
+<p>clear：将“Flag”设置为False<br>set：将“Flag”设置为True<br>我要反馈<br>15.<br>(多选题)下列关于程序说法正确的是<br> A.我们写好的软件，存放在磁盘上可以叫做程序<br> B.一个程序包括，需要执行的指令和数据（0/1）<br> C.一个程序就是存放到磁盘上的文件<br> D.程序是磁盘上存在的静态实体<br>正确答案：ABCD<br>解析：<br>此题考查程序的概念，ABCD都为正确选项<br>我要反馈<br>16.<br>(单选题)栈和队列的共同特点是：<br> A.都是先进先出<br> B.都是先进后出<br> C.只允许在端点处插入和删除元素<br> D.没有共同点<br>正确答案：C<br>解析：<br>遵循原则:<br>队列:先进先出<br>栈:先进后出(后进先出)<br>无论先进先出还是先进后出都是在端点处插入和删除元素.<br>我要反馈<br>17.<br>(多选题)下列关于进程池说法正确的是（）<br> A.python中，进程池内部会维护一个进程序列。当需要时，程序会去进程池中获取一个进程<br> B.如果进程池序列中没有可供使用的进程，那么程序就会等待，直到进程池中有可用进程为止。<br> C.apply 从进程池里取一个进程并同步执行<br> D.apply_async 从进程池里取出一个进程并异步执行<br>正确答案：ABCD<br>解析：<br>此题考查进程池的概念以及方法<br>我要反馈<br>18.<br>(多选题)下列关于共享内存说法正确的是（）<br> A.进程共享同一块内存空间<br> B.访问共享内存和访问私有内存一样快<br> C.不需要系统调用和内核出口<br> D.造成不必要的内存复制<br>正确答案：ABC<br>解析：<br>D选项错误，是不造成不必要的内存复制<br>我要反馈<br>19.<br>(单选题)建立多进程的主要目的是提高（ ）的利用率<br> A.文件<br> B.CPU<br> C.内存<br> D.外设<br>正确答案：B<br>解析：<br>想要充分利用多核CPU资源，Python中大部分情况下都需要使用多进程，Python中提供了multiprocessing这个包实现多进程。multiprocessing支持子进程、进程间的同步与通信，提供了Process、Queue、Pipe、Lock等组件。<br>我要反馈<br>20.<br>(单选题)进程的基本特性是（）<br> A.进程是动态的、多个进程可以含有相同的程序和多个进程可以并行运行<br> B.进程是动态的、多个进程对应的程序必须是不同的和多个进程可以并发运行<br> C.进程是动态的、多个进程可以含有相同的程序和多个进程不能并发运行<br> D.进程是静态的、多个进程可以含有相同的程序和多个进程可以并发运行<br>正确答案：A<br>解析：<br>本题考查进程的概念<br>我要反馈<br>Copyright(C) 达内时代科技集团有限公司 2011-2013 tarena.com.cn 返回顶部</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+	<div>
+	  
+		<div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+	  
+	</div>
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="xxyxt WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/转载/" rel="tag"># 转载</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/28/堆/" rel="next" title="堆">
+                <i class="fa fa-chevron-left"></i> 堆
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/01/排序算法总结/" rel="prev" title="排序算法">
+                排序算法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://goss3.vcg.com/creative/vcg/800/new/VCG211126173663.jpg" alt="xxyxt">
+            
+              <p class="site-author-name" itemprop="name">xxyxt</p>
+              <p class="site-description motion-element" itemprop="description">点滴记录 | step by step</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+			
+            
+  
+  
+  <div class="site-state-item site-state-categories">
+    
+	  <a href="/categories/index.html">
+	
+      <span class="site-state-item-count">6</span>
+      <span class="site-state-item-name">categories</span>
+    </a>
+  </div>
+
+
+
+  
+  
+  <div class="site-state-item site-state-tags">
+    
+	  <a href="/tags/index.html">
+	
+      <span class="site-state-item-count">15</span>
+      <span class="site-state-item-name">tags</span>
+    </a>
+  </div>
+
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/xxyxt" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:xiangtao@zju.edu.cn" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/weixin_43123900" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-globe"></i>CSDN</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">
+
+&copy; 
+<span itemprop="copyrightYear">2019</span>
+<span class="with-love">
+<i class="fa fa-heart"></i>
+</span>
+<span class="author" itemprop="copyrightHolder">xxyxt</span>
+<div class="theme-info"> |
+Powered by <a class="theme-link" href="https://hexo.io" rel="external nofollow">Hexo</a>
+Theme -
+<a class="theme-link" href="https://github.com/iissnan/hexo-theme-next" rel="external nofollow">
+NexT.Gemini
+</a>
+</div>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> Visitor
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> Total Visit
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<!-- LOCAL: You can save these files to your site and update links -->
+    
+        
+        <link rel="stylesheet" href="https://aimingoo.github.io/gitmint/style/default.css">
+        <script src="https://aimingoo.github.io/gitmint/dist/gitmint.browser.js"></script>
+    
+<!-- END LOCAL -->
+
+    
+
+    
+      <script type="text/javascript">
+      function renderGitment(){
+        var gitment = new Gitmint({
+            id: window.location.pathname, 
+            owner: 'xxyxt',
+            repo: 'gitment-comments.github.io',
+            
+            lang: "" || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+            
+            oauth: {
+            
+            
+                client_secret: '4ca02cdf8564954f283b03c530c5bd745b9ee83d',
+            
+                client_id: '33103de923e38fc8ee09'
+            }});
+        gitment.render('gitment-container');
+      }
+
+      
+      renderGitment();
+      
+      </script>
+    
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
